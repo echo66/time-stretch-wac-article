@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: sig-alternate-sample.aux
+The style file: abbrv.bst
+Database file #1: sigproc.bib
+Warning--empty publisher in dspguide
+You've used 20 entries,
+            2118 wiz_defined-function locations,
+            615 strings with 7464 characters,
+and the built_in function-call counts, 6690 in all, are:
+= -- 637
+> -- 318
+< -- 5
++ -- 127
+- -- 106
+* -- 432
+:= -- 1092
+add.period$ -- 58
+call.type$ -- 20
+change.case$ -- 111
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 286
+empty$ -- 564
+format.name$ -- 106
+if$ -- 1431
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 20
+newline$ -- 101
+num.names$ -- 40
+pop$ -- 166
+preamble$ -- 1
+purify$ -- 93
+quote$ -- 0
+skip$ -- 180
+stack$ -- 0
+substring$ -- 316
+swap$ -- 60
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 76
+warning$ -- 1
+while$ -- 59
+width$ -- 22
+write$ -- 216
+(There was 1 warning)

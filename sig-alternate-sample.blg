@@ -6,34 +6,34 @@ Database file #1: sigproc.bib
 Warning--empty publisher in dspguide
 You've used 20 entries,
             2118 wiz_defined-function locations,
-            615 strings with 7464 characters,
-and the built_in function-call counts, 6690 in all, are:
-= -- 637
-> -- 318
+            615 strings with 7586 characters,
+and the built_in function-call counts, 6726 in all, are:
+= -- 640
+> -- 324
 < -- 5
-+ -- 127
-- -- 106
-* -- 432
-:= -- 1092
++ -- 129
+- -- 108
+* -- 436
+:= -- 1098
 add.period$ -- 58
 call.type$ -- 20
-change.case$ -- 111
+change.case$ -- 112
 chr.to.int$ -- 0
 cite$ -- 21
 duplicate$ -- 286
 empty$ -- 564
-format.name$ -- 106
-if$ -- 1431
+format.name$ -- 108
+if$ -- 1438
 int.to.chr$ -- 0
 int.to.str$ -- 20
 missing$ -- 20
 newline$ -- 101
 num.names$ -- 40
-pop$ -- 166
+pop$ -- 167
 preamble$ -- 1
-purify$ -- 93
+purify$ -- 94
 quote$ -- 0
-skip$ -- 180
+skip$ -- 181
 stack$ -- 0
 substring$ -- 316
 swap$ -- 60

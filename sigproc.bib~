@@ -14,7 +14,7 @@
 	YEAR={1997}, 
 	PAGES={4 pp.-} }
 
-@CONFERENCE{verhelst:wsola93,
+@INPROCEEDINGS{verhelst:wsola93,
 	AUTHOR = {Marc Roelands and Werner Verhelst},
 	BOOKTITLE = {EUROSPEECH},
 	TITLE = "{Waveform similarity based overlap-add (WSOLA) for time-scale modification of speech: structures and evaluation.}",

@@ -1,10 +1,14 @@
 \begin{thebibliography}{10}
 
+\bibitem{kievII}
+{KievII: GUI Javascript library, for web audio applications
+  https://github.com/janesconference/KievII/ (developers)}, 2013.
+
 \bibitem{flocking:icmc2014}
 C.~Clark and A.~Tindale.
 \newblock {Flocking: A Framework for Declarative Music-Making on the Web}.
-\newblock In {\em {Proceedings of the 40st International Computer Music
-  Conference}}, Athens, 2014.
+\newblock In {\em {Proceedings of the 40th International Computer Music
+  Conference}}, pages 1550--1557, Athens, 2014.
 
 \bibitem{phasevocoder:bernardini}
 A.~de~Gotzen, N.~Bernardini, and D.~Arfib.
@@ -27,8 +31,15 @@ M.~Dolson.
 \bibitem{phavorit}
 T.~Karrer, E.~Lee, and J.~Borchers.
 \newblock Phavorit: A phase vocoder for real-time interactive time-stretching.
-\newblock In {\em ICMC '06: Proceedings of the International Computer Music
-  Conference}, pages 708--715, New Orleans, USA, November 2006.
+\newblock In {\em Proceedings of the International Computer Music Conference},
+  pages 708--715, New Orleans, USA, November 2006.
+
+\bibitem{phasevocoder:latency}
+T.~Karrer, E.~Lee, and J.~Borchers.
+\newblock {An Analysis of Startup and Dynamic Latency in Phase Vocoder-Based
+  Time-Stretching Algorithms}.
+\newblock In {\em Proceedings of the International Computer Music Conference},
+  volume~2, pages 73--80, Copenhagen, Denmark, August 2007.
 
 \bibitem{laroche:phasinessbusiness}
 J.~Laroche and M.~Dolson.
@@ -49,23 +60,11 @@ J.~Laroche and M.~Dolson.
 \newblock In {\em {Applications of Signal Processing to Audio and Acoustics,
   1999 IEEE Workshop on}}, pages 91--94, 1999.
 
-\bibitem{phasevocoder:latency}
-E.~Lee, T.~Karrer, and J.~Borchers.
-\newblock {An Analysis of Startup and Dynamic Latency in Phase Vocoder-Based
-  Time-Stretching Algorithms}.
-\newblock In {\em ICMC '07: Proceedings of the International Computer Music
-  Conference}, volume~2, pages 73--80, Copenhagen, Denmark, August 2007.
-
 \bibitem{earsketch:wac2015}
 A.~Mahadevan, J.~Freeman, and B.~Magerko.
 \newblock {EarSketch: Teaching computational music remixing in an online Web
   Audio based learning environment}.
 \newblock In {\em {1st Web Audio Conference}}, {Paris}, {2015}.
-
-\bibitem{tonejs:wac2015}
-Y.~Mann.
-\newblock {Interactive Music with Tone.js}.
-\newblock In {\em {1st Web Audio Conference}}, Paris, 2015.
 
 \bibitem{moorer1976the}
 J.~A. Moorer.
@@ -104,7 +103,7 @@ H.~Tachibana, N.~Ono, H.~Kameoka, and S.~Sagayama.
 \newblock Harmonic/percussive sound separation based on anisotropic smoothness
   of spectrograms.
 \newblock {\em IEEE/ACM Trans. Audio, Speech and Lang. Proc.},
-  22(12):2059--2073, Dec. 2014.
+  22(12):2059--2073, December 2014.
 
 \bibitem{audiotag:playbackRate}
 Teoli and C.~Mills.

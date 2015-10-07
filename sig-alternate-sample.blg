@@ -3,46 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sig-alternate-sample.aux
 The style file: abbrv.bst
 Database file #1: sigproc.bib
+Warning--to sort, need author or key in kievII
 Warning--empty publisher in dspguide
 You've used 20 entries,
             2118 wiz_defined-function locations,
-            615 strings with 7586 characters,
-and the built_in function-call counts, 6726 in all, are:
-= -- 640
-> -- 324
-< -- 5
-+ -- 129
-- -- 108
-* -- 436
-:= -- 1098
-add.period$ -- 58
+            614 strings with 7544 characters,
+and the built_in function-call counts, 6856 in all, are:
+= -- 659
+> -- 318
+< -- 6
++ -- 127
+- -- 106
+* -- 445
+:= -- 1091
+add.period$ -- 56
 call.type$ -- 20
-change.case$ -- 112
+change.case$ -- 111
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 286
-empty$ -- 564
-format.name$ -- 108
-if$ -- 1438
+cite$ -- 22
+duplicate$ -- 290
+empty$ -- 577
+format.name$ -- 106
+if$ -- 1480
 int.to.chr$ -- 0
 int.to.str$ -- 20
-missing$ -- 20
-newline$ -- 101
-num.names$ -- 40
+missing$ -- 19
+newline$ -- 99
+num.names$ -- 38
 pop$ -- 167
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 93
 quote$ -- 0
-skip$ -- 181
+skip$ -- 200
 stack$ -- 0
-substring$ -- 316
-swap$ -- 60
-text.length$ -- 5
+substring$ -- 356
+swap$ -- 71
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 76
-warning$ -- 1
-while$ -- 59
+warning$ -- 2
+while$ -- 60
 width$ -- 22
-write$ -- 216
-(There was 1 warning)
+write$ -- 212
+(There were 2 warnings)

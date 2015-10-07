@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  7 OCT 2015 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  7 OCT 2015 18:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -946,15 +946,6 @@ Overfull \hbox (12.94499pt too wide) in paragraph at lines 270--271
  []
 
 [2 <./ola.png>]
-
-LaTeX Warning: Citation `kievII' on page \thepage  undefined on input line 339.
-
-
-
-LaTeX Warning: Citation `kievII' on page \thepage  undefined on input line 350.
-
-
-
 Underfull \hbox (badness 3240) in paragraph at lines 365--366
 []\T1/aer/m/it/9 process(Array in-put-Frame, CBuffer out-put-Frame)\T1/aer/m/n/
 9 :
@@ -966,7 +957,7 @@ Underfull \hbox (badness 2277) in paragraph at lines 378--379
  []
 
 [4]
-Overfull \hbox (4.74997pt too wide) in paragraph at lines 424--424
+Overfull \hbox (4.74997pt too wide) in paragraph at lines 425--425
 []\secfnt Issues with Web Au-dio API, re-gard-ing time
  []
 
@@ -974,13 +965,13 @@ Overfull \hbox (4.74997pt too wide) in paragraph at lines 424--424
 
 ] (./sig-alternate-sample.aux) ) 
 Here is how much of TeX's memory you used:
- 16770 strings out of 493091
- 327335 string characters out of 6134970
+ 16769 strings out of 493091
+ 327319 string characters out of 6134970
  371152 words of memory out of 5000000
- 19883 multiletter control sequences out of 15000+600000
+ 19882 multiletter control sequences out of 15000+600000
  51018 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,71p,1519b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,71p,1555b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/d
 vips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
@@ -1000,7 +991,7 @@ bm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on sig-alternate-sample.pdf (6 pages, 261541 bytes).
+Output written on sig-alternate-sample.pdf (6 pages, 261143 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream

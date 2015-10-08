@@ -14,17 +14,19 @@
 \citation{phasevocoder:bernardini}
 \citation{dolsontutorial:phasevocoder}
 \citation{phavorit}
+\citation{phasevocoder:latency}
 \citation{laroche:phasinessbusiness}
 \citation{phasevocoder:pitchshift}
-\citation{phasevocoder:latency}
 \citation{dafx:2nd}
 \citation{dolsontutorial:phasevocoder}
 \citation{phavorit}
 \citation{phasevocoder:pitchshift}
 \citation{dafx:2nd}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Example showing what happens, regarding hop sizes, for slowdowns and speed-ups of the audio.\relax }}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Illustration of the basic OLA algorithm, showing how to apply both analysis and synthesis hops. For time compression, $H_a < H_s$. For time expansion, $H_a > H_s$.\relax }}{\thepage }}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:ola}{{1}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Illustration of the WSOLA analysis step. The synthesis step is equal to OLA. For each analysis frame \textit  {i}, the analysis hop $H_{a_i}$ is calculated according to the optimal displacement $\delta _i$, obtained through cross-correlation between analysis frame \textit  {i} and \textit  {i-1}, for a maximum delay of $\delta _{max}$: $H_{a_i} = i \cdot H_a + \delta _i$\relax }}{\thepage }}
+\newlabel{fig:wsola}{{2}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}WSOLA}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Phase Vocoder}{\thepage }}
 \citation{phasevocoder:identityphaselock}
@@ -42,7 +44,6 @@
 \citation{wavesaudio:wac2015}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Existing Implementations}{\thepage }}
 \@writefile{toc}{\contentsline {section}{\numberline {4}New Implementations}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation and Discussion}{\thepage }}
 \citation{moorer1976the}
 \citation{Tachibana:2014:HSS:2719949.2719982}
 \bibstyle{abbrv}
@@ -55,11 +56,11 @@
 \bibcite{phavorit}{6}
 \bibcite{phasevocoder:latency}{7}
 \bibcite{laroche:phasinessbusiness}{8}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Comparison of Time Stretching/Pitch Shift JavaScript and Native implementations\relax }}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Issues with Web Audio API, regarding time stretching and pitch shifting}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions and Future Work}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Acknowledgments}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {8}References}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation and Discussion}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Issues with Web Audio API, regarding time stretching and pitch shifting}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusions and Future Work}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Acknowledgments}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {9}References}{\thepage }}
 \bibcite{phasevocoder:identityphaselock}{9}
 \bibcite{phasevocoder:pitchshift}{10}
 \bibcite{earsketch:wac2015}{11}
@@ -72,3 +73,4 @@
 \bibcite{audiotag:playbackRate}{18}
 \bibcite{emscripten}{19}
 \bibcite{dafx:2nd}{20}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Comparison of Time Stretching/Pitch Shift JavaScript and Native implementations\relax }}{\thepage }}

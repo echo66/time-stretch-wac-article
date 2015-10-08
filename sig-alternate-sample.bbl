@@ -7,7 +7,7 @@
 \bibitem{flocking:icmc2014}
 C.~Clark and A.~Tindale.
 \newblock {Flocking: A Framework for Declarative Music-Making on the Web}.
-\newblock In {\em {Proceedings of the 40th International Computer Music
+\newblock In {\em {Proceedings of the International Computer Music
   Conference}}, pages 1550--1557, Athens, 2014.
 
 \bibitem{phasevocoder:bernardini}
@@ -39,13 +39,13 @@ T.~Karrer, E.~Lee, and J.~Borchers.
 \newblock {An Analysis of Startup and Dynamic Latency in Phase Vocoder-Based
   Time-Stretching Algorithms}.
 \newblock In {\em Proceedings of the International Computer Music Conference},
-  volume~2, pages 73--80, Copenhagen, Denmark, August 2007.
+  pages 73--80, Copenhagen, Denmark, August 2007.
 
 \bibitem{laroche:phasinessbusiness}
 J.~Laroche and M.~Dolson.
 \newblock Phase-vocoder: about this phasiness business.
-\newblock In {\em Applications of Signal Processing to Audio and Acoustics,
-  1997. 1997 IEEE ASSP Workshop on}, pages 4 pp.--, 1997.
+\newblock In {\em IEEE ASSP Workshop on Applications of Signal Processing to
+  Audio and Acoustics}, pages 4--8, 1997.
 
 \bibitem{phasevocoder:identityphaselock}
 J.~Laroche and M.~Dolson.
@@ -102,7 +102,7 @@ S.~W. Smith.
 H.~Tachibana, N.~Ono, H.~Kameoka, and S.~Sagayama.
 \newblock Harmonic/percussive sound separation based on anisotropic smoothness
   of spectrograms.
-\newblock {\em IEEE/ACM Trans. Audio, Speech and Lang. Proc.},
+\newblock {\em IEEE/ACM Transactions on Audio, Speech and Language Processing},
   22(12):2059--2073, December 2014.
 
 \bibitem{audiotag:playbackRate}

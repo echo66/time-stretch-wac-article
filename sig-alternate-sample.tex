@@ -48,7 +48,6 @@
 \documentclass{sig-alternate}
 
 
-
 \begin{document}
 
 % Copyright
@@ -154,7 +153,7 @@ Audio time stretching and pitch shifting are operations that all major commercia
 \end{sloppypar}
 In this paper, we review the current state of art for client-side implementations of time stretching and pitch shifting, their limitations, and describe two new implementations for two well-known algorithms: (1) Phase Vocoder with Identity Phase Lock and (2) a modified version of Overlap \& Add.
 
-Additionally, we discuss some issues related to the Web Audio API (WAA) and frequency-based audio processing regarding latency and audio quality in pitch shifting and time time stretching towards raising awareness about possible changes in the WAA.
+Additionally, we discuss some issues related to the Web Audio API (WAA) and frequency-based audio processing regarding latency and audio quality in pitch shifting and time stretching towards raising awareness about possible changes in the WAA. %% MD removed extra "time" 
 \end{abstract}
 
 
@@ -212,6 +211,8 @@ Additionally, we discuss some issues related to the Web Audio API (WAA) and freq
 
 \begin{sloppypar}
 Time stretching and pitch shifting are two operations widely available in commercial and open source musical applications like Ableton Live,\footnote{https://www.ableton.com/} Traktor Pro\footnote{http://bit.ly/1izsxHy} and Ardour.\footnote{http://ardour.org/} Currently, creative frameworks implemented in JavaScript and the Web Audio API (WAA) such as Flocking \cite{flocking:icmc2014} can only change the duration of a signal through re-sampling of audio buffers, thus changing both the duration (i.e.: tempo) and pitch at the same time. In digital audio workstations (DAW) like EarSketch \cite{earsketch:wac2015}, time stretching and pitch shifting is performed server-side, with SoX,\footnote{http://sox.sourceforge.net/} making real-time interaction impossible.
+%% MD added extra sentence for motivation to bridge to the next section
+Our aim in this work is towards enabling real-time pitch shifting and time-stretching in browsers, which is currently an under-explored aspect of the WAA.  
 \end{sloppypar}
 
 \begin{sloppypar}
@@ -223,7 +224,7 @@ For both implementations, we had the following non-functional requirements:
 \begin{itemize}
 	\item \textbf{Constant memory usage}, with fixed size circular arrays, in order to minimize the impact of the garbage collector, by maintaining a constant memory profile.
 	\item \textbf{Intuitive API and documentation}, stating the trade-offs between audio quality and performance.
-	\item \textbf{Minimize assumptions} regarding sample rate, number of channels, the type of audio (percussive or harmonic) being processed, third party software components and execution environments.
+	\item \textbf{Minimize assumptions} regarding sample rate, number of channels, the type of audio content (percussive or harmonic) being processed, third party software components and execution environments. %% MD added content - type of "audio" could be wrong interpreted as file type.. .wav .flac .mp3. 
 \end{itemize}
 \end{sloppypar}
 
@@ -258,49 +259,51 @@ y(n+i \cdot H_s) = \left\{\begin{array}{lll}
 with $y_i = x_{w_i}$ for the basic OLA, $n \in \mathbb{I} \, \land 0 \leq n \leq N$ and $i \in \mathbb{N} \, \land \, i \cdot H_a \leq M \, \land \, i \cdot H_s \leq L$. The relation between both overlap/hop sizes and the the stretching factor is defined as:
 
 \begin{equation}
-\alpha = \frac{H_s}{H_a}
+\alpha = \frac{H_s}{H_a}. %% MD added full stop. 
 \end{equation}
 
-Usually, one of the hop sizes is fixed while the other is a function of $\alpha$. We should note that $\alpha$ can be change at each new frame. OLA does not preserve phase relations between consecutive frames and, as such, there are noticeable artefacts in the output signal: modulation of harmonic structures (e.g.: human voice) and reverberation. The temporal complexity of OLA is $O(N)$. In figure \ref{fig:OlaAndWsola}(a), it can be seen what happens to both $H_a$ and $H_s$ when changing the $\alpha$.
+%% MD added part about relevance for real-time processing.. and minor tweaks to text
+Usually, one of the hop sizes is fixed while the other is a function of $\alpha$. We should note that $\alpha$ can change at each new frame, which is particularly relevant in for real-time audio processing. OLA does not preserve phase relations between consecutive frames and, as such, there are noticeable artefacts in the output signal: modulation of harmonic structures (e.g.: human voice) and reverberation. The temporal complexity of OLA is $O(N)$. In figure \ref{fig:OlaAndWsola}(a), we can see what happens to both $H_a$ and $H_s$ when changing $\alpha$.
 
-To perform pitch shifting with OLA, one could couple a re-sampler to the OLA time stretcher. In order to allow simultaneous time stretching and pitch shifting, let $t$ and $t+1$ be the current and next moments, $\beta_{t}$ be the new desired pitch and $R_{b}$ the sampling rate of the input signal. Then, the new stretching factor $\alpha_{t+1}$ and the new sample rate $R_{t+1}$ are defined as 
+%% MD - don't understand what you mean by "moments" -> change to frames ??
+To perform pitch shifting with OLA, we could couple a re-sampler to the OLA time stretcher. In order to allow simultaneous time stretching and pitch shifting, let $t$ and $t+1$ be the current and next moments, $\beta_{t}$ be the new desired pitch and $R_{b}$ the sampling rate of the input signal. Then, the new stretching factor $\alpha_{t+1}$ and the new sample rate $R_{t+1}$ are defined as 
 \begin{equation}
 R_{t+1} = R_{b} * \beta_{t+1}
 \end{equation}
 \begin{equation}
-\alpha_{t+1} = \frac{\alpha_{t}}{R_{t}}
+\alpha_{t+1} = \frac{\alpha_{t}}{R_{t}}. %% MD added full stop. 
 \end{equation}
 
 \subsection{WSOLA}
 
-First introduced in \cite{verhelst:wsola93}, WSOLA applies a delay $\delta \in [-\delta_{max}:\delta_{max}]$ to each analysis frame, such that the waveforms of two overlapping synthesis frames are as similar as possible in the overlapping regions.\footnote{WSOLA is equivalent to OLA when $\delta_{max}=0$.} The delay can be obtained by calculating the cross-correlation between the overlapping regions of each synthesis sample. Therefore, the analysis step for $x_i$ is redefined as
+First introduced in \cite{verhelst:wsola93}, WSOLA applies a delay $\delta \in [-\delta_{max}:\delta_{max}]$ to each analysis frame, such that the waveforms of two overlapping synthesis frames are as similar as possible in the overlapping regions.\footnote{WSOLA is equivalent to OLA when $\delta_{max}=0$.} The delay can be obtained by calculating the cross-correlation between the overlapping regions of each synthesis frame. Therefore, the analysis step for $x_i$ is redefined as %% MD sample -> frame
 \begin{equation}
 x_i(n) = x(n + H_{a_i})
 \end{equation}
-where $H_{a_i}$ is the analysis hop size for frame $i$ and it is defined as 
+where $H_{a_i}$ is the analysis hop size for frame $i$ and is defined as 
 \begin{equation}
 H_{a_i} = i \cdot H_a + \delta_i
 \end{equation}
-
+and
 \begin{equation}
 \delta_i = x_i \star x_{i-1}[\delta_{max}]
 \end{equation}
 where $\delta_{max} < H_a$. This algorithm removes the reverberation and modulation but, for transient rich sounds (percussion, guitar riffs), there might be some missing transients and stuttering (i.e.: repeated transients). Regarding the temporal complexity of WSOLA, if the cross-correlation is implemented with FFT Convolution \cite{dspguide}, we get $O(N log_2 N)$. Otherwise, if it is a ``naive" implementation of the convolution, we get $O(N^2)$.
-To perform pitch shifting, one can use the same method described for OLA.
+To perform pitch shifting, we can use the same method described for OLA.
 
 \begin{figure*}
 	\centering
 	%COLOCAR AS IMAGENS: (a) eps/constant-bpm, (b) eps/step-bpm, (c) eps/aprox-bpm, (d) eps/linear-bpm [width=1.4in]
 	\subfigure(a) \includegraphics[width=3.9in]{OLA}
 	\subfigure(b) \includegraphics[width=2.2in]{WSOLA}
-	\caption{Illustrations for (a) the basic OLA algorithm, with both analysis and synthesis steps and (b) the WSOLA analysis step. For time compression, we have $H_a < H_s$. For time expansion, $H_a > H_s$. In WSOLA, the main difference is within the ``reading head" position. For each analysis frame \textit{i}, the analysis hop size $H_{a_i}$ is calculated according to the optimal displacement $\delta_i$, obtained through cross-correlation between analysis frame $i$ and $i-1$, for a maximum delay of $\delta_{max}$: $H_{a_i} = i \cdot H_a + \delta_i$} 
+	\caption{Illustrations for (a) the basic OLA algorithm, with both analysis and synthesis steps and (b) the WSOLA analysis step. For time compression, we have $H_a < H_s$ and for time expansion, $H_a > H_s$. In WSOLA, the main difference is within the ``reading head" position. For each analysis frame \textit{i}, the analysis hop size $H_{a_i}$ is calculated according to the optimal displacement $\delta_i$, obtained through cross-correlation between analysis frame $i$ and $i-1$, for a maximum delay of $\delta_{max}$: $H_{a_i} = i \cdot H_a + \delta_i$} 
 	\label{fig:OlaAndWsola} 
 \end{figure*} 
 
 \subsection{Phase Vocoder}
 
 \begin{sloppypar}
-Phase Vocoder is a well documented \cite{phasevocoder:bernardini, dolsontutorial:phasevocoder, phavorit, phasevocoder:latency, laroche:phasinessbusiness, phasevocoder:pitchshift, dafx:2nd} algorithm used for time stretching \cite{dolsontutorial:phasevocoder,phavorit}, pitch shifting \cite{phasevocoder:pitchshift} and other audio effects like robotization \cite{dafx:2nd}. In general, it has higher computational costs than time domain methods like WSOLA but offers higher quality audio, without missing transients. Each iteration of the Phase Vocoder has eight steps and they are performed in-between steps 2 and 3 of OLA:
+The Phase Vocoder is a well documented \cite{phasevocoder:bernardini, dolsontutorial:phasevocoder, phavorit, phasevocoder:latency, laroche:phasinessbusiness, phasevocoder:pitchshift, dafx:2nd} algorithm used for time stretching \cite{dolsontutorial:phasevocoder,phavorit}, pitch shifting \cite{phasevocoder:pitchshift} and other audio effects like robotization \cite{dafx:2nd}. In general, it has a higher computational cost than time domain methods like WSOLA but offers higher quality audio, without missing transients. Each iteration of the Phase Vocoder has eight steps which occur in-between steps 2 and 3 of OLA:
 \begin{enumerate}
 	\item Calculate the forward Fourier transform of $x_{w_i}$
 \begin{equation}
@@ -310,7 +313,7 @@ where $\Omega_{k} = \frac{2\pi k}{N}$ is the frequency center for frequency bin 
 
 	\item Calculate the magnitude $|X_i|  \in \mathbb{R}^N$ and phase $\angle X_i  \in \mathbb{R}^N$ spectra for $X_i$ by converting $X_i$ to polar coordinates.
 
-	\item Calculate the difference between current and previous phase spectras and, then, the sample-wise difference with the frequency centers $\Omega_{k}$ 
+	\item Calculate the difference between current and previous phase spectras and, then, the sample-wise difference with the frequency centres $\Omega_{k}$ 
 \begin{equation}
 \Delta_{\angle X_i} = \angle X_{i} - \angle X_{i-1} - H_a \cdot \Omega_k
 \end{equation}
@@ -320,7 +323,7 @@ where $\Omega_{k} = \frac{2\pi k}{N}$ is the frequency center for frequency bin 
 \Delta^{p}_{\angle X_i} = \Delta_{\angle X_i} - 2\pi \cdot \lfloor \frac{\Delta_{\angle X_i}}{2} \rceil
 \end{equation}
 
-	\item Compute the instantaneous frequency $\omega$ for each freq. bin k
+	\item Compute the instantaneous frequency $\omega$ for each freq. bin $k$
 \begin{equation}
 \omega_k = \Omega_k + \frac{\Delta^{p}_{\angle X_i}}{H_a}
 \end{equation}
@@ -335,7 +338,7 @@ where $\Omega_{k} = \frac{2\pi k}{N}$ is the frequency center for frequency bin 
 Y_i = |X_i| \cdot e^{j \cdot \angle Y_i}
 \end{equation}
 
-	\item Finally, calculate the inverse Fourier transform $y_i$ of the frequency  $Y_i$
+	\item Finally, we calculate the inverse Fourier transform $y_i$ of the frequency  $Y_i$
 \begin{equation}
 y_{i}(n) = w(n) \cdot \sum_{k=0}^{N} Y_i(n,\Omega_k) \cdot e^{j\Omega_{k}n}
 \end{equation}
@@ -344,9 +347,9 @@ y_{i}(n) = w(n) \cdot \sum_{k=0}^{N} Y_i(n,\Omega_k) \cdot e^{j\Omega_{k}n}
 \end{enumerate}
 \end{sloppypar}
 
-This algorithm ensures \textit{horizontal phase coherence} (i.e.: phase continuity for the same frequency bin, in consecutive frequency frames) is guaranteed. However, \textit{vertical phase coherence} (i.e.: phase relations between different frequency bins, in the same frame) is usually destroyed in the phase correction process. The loss of \textit{vertical phase coherence} results in a distinct artefact: \textit{phasiness} (i.e.: metallic tunnel sound). The temporal complexity of the Phase Vocoder is $O(N\,log_{2}N)$.
+This algorithm ensures \textit{horizontal phase coherence} (i.e.: phase continuity for the same frequency bin, in consecutive frequency frames) is guaranteed. However, \textit{vertical phase coherence} (i.e.: phase relations between different frequency bins, in the same frame) is usually destroyed in the phase correction process. The loss of \textit{vertical phase coherence} results in a distinct artefact: \textit{phasiness} (i.e.: a metallic tunnel sound). The temporal complexity of the Phase Vocoder is $O(N\,log_{2}N)$.
 
-To maintain both vertical and horizontal coherence, we can apply a technique known as \textit{Identity Phase-Locking} \cite{phasevocoder:identityphaselock}. The main idea is that frequency bins that are not spectral peaks contribute to the partials of the nearest spectral peak. A spectral peak is a local maximum in the magnitude spectra. In order to find the spectral peaks, one can use a simple heuristic: if a frequency bin has the maximum magnitude when compared with four neighbour bins,  then it is a spectral peak. After identifying all spectral peaks, we need to infer what is the ``region of influence" of each peak (i.e.: for a given peak, what are the non-peak bins that contribute to the peak partial) (see section IIIC of \cite{phasevocoder:identityphaselock}). After identifying both the spectral peaks and the "regions of influence", the usual phase correction method is applied to the peak bins. The phase of a non-peak bin will be equal to the phase of its corresponding peak bin.
+To maintain both vertical and horizontal coherence, we can apply a technique known as \textit{Identity Phase-Locking} \cite{phasevocoder:identityphaselock}. The main idea is that frequency bins that are not spectral peaks contribute to the partials of the nearest spectral peak. A spectral peak is a local maximum in the magnitude spectra. In order to find the spectral peaks, we can use a simple heuristic: if a frequency bin has the maximum magnitude when compared with four neighbour bins,  then it is a spectral peak. After identifying all spectral peaks, we need to infer the ``region of influence" of each peak (i.e.: for a given peak, which are the non-peak bins that contribute to the peak partial) (see section IIIC of \cite{phasevocoder:identityphaselock}). After identifying both the spectral peaks and the ``regions of influence", the usual phase correction method is applied to the peak bins. The phase of a non-peak bin will be equal to the phase of its corresponding peak bin.
 
 To pitch shift with a Phase Vocoder, there are two methods available. The first one is re-sampling, in the same manner as OLA and WSOLA. The second one is adding an additional step to the phase correction, as described in \cite{phasevocoder:pitchshift}, which proceeds with the following steps. After identifying the spectral peaks, for a pitch shift factor $\beta$, each peak will be shifted to a new (angular) frequency $\beta \omega$, corresponding to a freq. shift $\Delta \omega = \omega(\beta-1)$. When $\Delta \omega$ is an integer, we just need to copy the Fourier transform values from the original ``region of influence" to the new one (around the new peak bin). If $\Delta \omega$ is a fractional number, a naive solution is to round $\Delta \omega$ to the nearest integer. This solution presents acceptable results for low sample rates and large FFT frame sizes.
 
@@ -356,7 +359,7 @@ To pitch shift with a Phase Vocoder, there are two methods available. The first 
 \begin{sloppypar}
 In this section we give an overview regarding time stretching and pitch shifting implementations with web technologies like JavaScript and the WAA, as well as native web browser implementations, available through the Audio Element \cite{audiotag}, via its \textit{playbackRate} attribute \cite{audiotag:playbackRate}.
 
-For pitch shift only implementations in JavaScript, there is pitchshift.js \cite{kievII} and jungle.js.\footnote{https://github.com/cwilso/Audio-Input-Effects} The first one is a port of a C++ implementation\footnote{http://downloads.dspdimension.com/smbPitchShift.cpp} of the Phase Vocoder for pitch shifting \cite{phasevocoder:pitchshift} while the second one is an implementation of the algorithm presented in \cite{modulationline:pitchshift}. 
+For pitch shift only implementations in JavaScript, there is pitchshift.js \cite{kievII} and jungle.js.\footnote{https://github.com/cwilso/Audio-Input-Effects} The first is a port of a C++ implementation\footnote{http://downloads.dspdimension.com/smbPitchShift.cpp} of the Phase Vocoder for pitch shifting \cite{phasevocoder:pitchshift} while the second is an implementation of the algorithm presented in \cite{modulationline:pitchshift}. 
 
 In Vexwarp,\footnote{http://www.vexflow.com/vexwarp/} time stretching is performed with the basic phase vocoder algorithm \cite{dolsontutorial:phasevocoder,phavorit}. With this application, it is not possible to perform real-time processing of the input signal.
 
@@ -372,7 +375,7 @@ There is another WSOLA implementation: tempo.js \cite{kievII}, the result of the
 
 In the WAVES project,\footnote{http://wavesjs.github.io/} the Audio library \cite{wavesaudio:wac2015} supports time stretching and pitch shifting through granular synthesis and re-sampling, offering two classes to perform both tasks: GranularEngine and SegmentEngine. The first one causes significant transient smearing. The second class requires the developer to pass a JSON object detailing the segmentation of the input audio buffer.
 
-Regarding the native implementations in web browsers, all major browsers, like Opera, Safari, Chrome and Firefox, implement time stretching to be used with the Audio tag, controlling the stretching factor with the \textit{playbackRate} attribute of the Audio tag/object. The stretching factor in the current implementations seems to be limited to the range $\alpha \in [0.5:4]$, where 0.5 is the slowest speed and 4 is the fastest one, meaning that web browsers perform an additional step in order to make the provided $\alpha$ comply with equation 4. Currently, we can only detail the implementation of Firefox and Chromium due to the closed-source nature of the Opera and Safari. In Firefox, time stretch is performed by the SoundTouch library. Chromium uses a custom WSOLA implementation. For both browsers, when slowing down, there is some stuttering (more noticeable in Firefox). When speeding up, namely for \textit{playbackRate} values larger than 1.2, there are some missing transients for percussive sounds.
+Regarding the native implementations in web browsers, all major browsers, like Opera, Safari, Chrome and Firefox, implement time stretching to be used with the Audio tag, controlling the stretching factor with the \textit{playbackRate} attribute of the Audio tag/object. The stretching factor in the current implementations seems to be limited to the range $\alpha \in [0.5:4]$, where 0.5 is the slowest speed and 4 is the fastest one, meaning that web browsers perform an additional step in order to make the provided $\alpha$ comply with equation (4). Currently, we can only detail the implementation of Firefox and Chromium due to the closed-source nature of Opera and Safari. In Firefox, time stretching is performed by the SoundTouch library. Chromium uses a custom WSOLA implementation. For both browsers, when slowing down, there is some stuttering (more noticeable in Firefox). When speeding up, namely for \textit{playbackRate} values greater than 1.2, there are some missing transients for percussive sounds.
 \end{sloppypar}
 
 \section{New Implementations}
@@ -384,13 +387,13 @@ Both implementations operate on a single audio channel and can be included in a 
 
 \begin{itemize}
 	\item \textit{process(Array inputFrame, CBuffer outputFrame)}: given a (mono) frame, performs a time stretching iteration and pushes $H_s$ samples in the output CBuffer.
-	\item \textit{get\_ha}: returns the current analysis hop size. This function calculates the increment to the "read head" of the input signal, when playing an audio file.
+	\item \textit{get\_ha}: returns the current analysis hop size. This function calculates the increment to the ``read head" of the input signal, when playing an audio file.
 	\item \textit{get\_hs}: returns the current synthesis hop size. This function calculates the increment to the output signal position which an be used to guide the cursor in the UI of an audio player using OLA-TS.js or PhaseVocoder.js as time stretchers.
 	\item \textit{clear\_buffers}: clears all internal buffers, like the overlapping buffer. This can be useful for audio players that need to create a noticeable stop in the transition to the next file in a playlist, in order to avoid using the phase of the previous song to adjust the phase of the next song.
 	\item \textit{set\_alpha(Number newAlpha)}: given the new stretching factor, it computes the new values for $H_s$, $H_a$ (both integers) and invokes the function pointed by \textit{overlap\_fn}.
 	\item \textit{get\_alpha}: returns the last specified stretching factor.
-	\item \textit{overlap\_fn}: public field pointing to a function that, given a stretching factor $\alpha$, will return a new overlapping factor.
-	\item \textit{get\_real\_alpha}: there are stretching factors that do not allow $H_s$ and $H_a$ to be integers and this might present a problem because the input signal "read head" is an integer number ($H_a$ is used to increment the "read head"). When the developer uses \textit{set\_alpha} to specify a new stretching factor, both $H_s$ and $H_a$ are rounded to the closest integer. As a result, there will be a difference between the specified $\alpha$ and the real $\alpha$. This difference can cause problems in use cases like a DJ application that automatically synchronizes two songs to a master tempo. If there is a divergence between the specified $\alpha$ and the real $\alpha$, after a certain amount of time, this divergence can cause beats of both songs to drift out of sync. Therefore, we created this function in order to allow the developer to create adequate controllers to adjust the speed of the audio players to avoid the problem described in the previous sentence.
+	\item \textit{overlap\_fn}: a public field pointing to a function that, given a stretching factor $\alpha$, will return a new overlapping factor.
+	\item \textit{get\_real\_alpha}: there are stretching factors that do not allow $H_s$ and $H_a$ to be integers and this might present a problem because the input signal ``read head" is an integer number ($H_a$ is used to increment the ``read head"). When the developer uses \textit{set\_alpha} to specify a new stretching factor, both $H_s$ and $H_a$ are rounded to the closest integer. As a result, there will be a difference between the specified $\alpha$ and the real $\alpha$. This difference can cause problems in use cases like a DJ application that automatically synchronizes two songs to a master tempo. If there is a divergence between the specified $\alpha$ and the real $\alpha$, after a certain amount of time, this divergence can cause the beats of both songs to drift out of sync. Therefore, we created this function in order to allow the developer to create adequate controllers to adjust the speed of the audio players to circumvent this issue. 
 \end{itemize}
 
 \subsection{OLA-TS.js}
@@ -404,7 +407,7 @@ Both OLA-TS.js and PhaseVocoder.js use the following formulas to define the anal
 \begin{equation}
 	H_s = \alpha * H_a
 \end{equation}
-
+%
 where $Ovl(\alpha)$ is the function defined in \textit{overlap\_fn}. In order to properly stretch a input signal, the developer should use a predetermined sequence of instructions. To make integration in other applications easier, we implemented helper classes to manage the buffering and the ``read heads" for the input buffers. Both implementations and their helper classes are public and open source, each one with it's own Git repository.\footnote{https://github.com/echo66/OLA-TS.js}\footnote{https://github.com/echo66/PhaseVocoderJS} Additionally, we implemented a small demo page where the user can drag \& drop several songs and play them simultaneously, controlling the volume and the stretching factor.
 
 \subsection{PhaseVocoder.js}
@@ -412,7 +415,7 @@ where $Ovl(\alpha)$ is the function defined in \textit{overlap\_fn}. In order to
 PhaseVocoder.js uses, by default, fourier.js, an FFT library offering methods implemented in both asm.js\footnote{http://asmjs.org} and  ``raw" JavaScript. In order to use a different FFT library, the developer can use the following methods: \textit{set\_stft\_fn(Function stftCallback)}, \textit{set\_istft\_fn(Function istftCallback)} and \textit{init\_fft\_fn(Function initCallback)}:
 \begin{itemize}
 	\item \textit{stftCallback(Array inputFrame, Array windowFrame, Number wantedSize, Object out)}: \textit{inputFrame} is a sequence of samples; \textit{windowFrame} is the discretization of the window function; \textit{wantedSize} is the desired size for the real and imaginary arrays of the output\footnote{\textit{wantedSize} can not be bigger than \textit{windowFrame.length}.}; \textit{out} is a JSON object with four arrays: real, imaginary, magnitude and phase, all of them describing the result of the forward Short Time Fourier Transform (STFT). This function will be invoked for each time frame being processed by PhaseVocoder.js.
-	\item \textit{istftCallback(Array real, Array imag, Array windowFrame, Array timeFrame)}: \textit{real} and \textit{imag} are the real and imaginary array describing a frequency frame; \textit{timeFrame} is the result of the inverse STFT. This function will be invoked when synthesizing a frequency frame, after the phase adaptation.
+	\item \textit{istftCallback(Array real, Array imag, Array windowFrame, Array timeFrame)}: \textit{real} and \textit{imag} are the real and imaginary arrays describing a frequency frame; \textit{timeFrame} is the result of the inverse STFT. This function will be invoked when synthesizing a frequency frame, after the phase adaptation.
 	\item \textit{initCallback(Number frameSize)}: this function is invoked after being added to a PhaseVocoder.js instance.
 \end{itemize}
 
@@ -448,25 +451,25 @@ To ease integration with the WAA, we implemented \textit{WAAPlayer}, which integ
 	\hline\end{tabular}
 \end{table*}
 
-In this section, we compare our implementations with the existing ones, reviewed in section 3.
+In this section, we compare our implementations with the existing ones, reviewed in Section 3.
 \begin{sloppypar}
-Unlike Vexwarp, PhaseVocoder.js allows real-time and block-wise processing of the input signal, with a minimized impact in transient smearing and no metallic sound, due to the inclusion of \textit{vertical phase coherence}. Unfortunately, due to the number of FFTs used (for $\alpha>1$, there are 4 forward FFT and 4 inverse FFT per output buffer), the computational costs are greater than soundtouch.js. But, in order to avoid missing transients in soundtouch.js, one needs to decrease the frame size and/or increase thee cross-correlation range, which will increase the computational costs of soundtouch.js and, as a consequence, can make PhaseVocoder.js competitive.
+Unlike Vexwarp, PhaseVocoder.js allows real-time and block-wise processing of the input signal, with a minimized impact in transient smearing and no metallic sound, due to the inclusion of \textit{vertical phase coherence}. Unfortunately, due to the number of FFTs used (for $\alpha>1$, there are 4 forward and 4 inverse FFTs per output buffer), the computational costs are greater than soundtouch.js. But, in order to avoid missing transients in soundtouch.js, we must decrease the frame size and/or increase the cross-correlation range, which will increase the computational costs of soundtouch.js and, as a consequence, can make PhaseVocoder.js competitive.
 \end{sloppypar}
 
-OLA-TS.js allows $O(N)$ time stretching, unlike PhaseVocoder.js, $O(N\,log_{2} N)$, and soundtouch.js, $O(N^2)$, but can introduce noticeable modulation in harmonic structures like the voice of a human singer, for frame sizes bellow 4096 samples, with a sample rate of 44100 Hz. Additionally, it may require some manual experiment with the overlap and beta parameters to reduce modulation.\footnote{We have already two default functions to adjust both parameters.} Due to the recommended frame size (4096), OLA-TS.js is adequate for applications where there are smooth adjustments in the stretching factor.
+OLA-TS.js allows $O(N)$ time stretching, unlike PhaseVocoder.js, $O(N\,log_{2} N)$, and soundtouch.js, $O(N^2)$, but can introduce noticeable modulation in harmonic structures like the voice of a human singer, for frame sizes smaller than 4096 samples, with a sample rate of 44100 Hz. Additionally, it may require some manual experimentation with the overlap and beta parameters to reduce the modulation.\footnote{We have two default functions to adjust both parameters.} Due to the recommended frame size (4096 samples), OLA-TS.js is adequate for applications where there are smooth adjustments in the stretching factor.
 
-To make it simple for the reader to understand some of the main features and problems with each overviewed and/or discussed implementation, we have create Table 1 which lists, for each implementation, its algorithm, audio artefacts and the effect(s) implemented.
+To make it simple for the reader to understand some of the main features and problems with each reviewed and/or discussed implementation, Table 1 includes, for each implementation, its algorithm, audio artefacts and the effect(s) implemented.
 \end{sloppypar}
 
 \section{Time stretching and pitch shifting issues with the WAA}
 
-Currently, the WAA offers two classes to work in frequency domain: (1) \textit{AnalyserNode}, allowing the developer to obtain the magnitude spectra (but no phase spectra) of a time sequence, (2) \textit{PeriodicWave}, an interface to define a periodic waveform for an \textit{OscillatorNode} in order to perform synthesis using a similar method to the one described in \cite{moorer1976the}. Currently, there is no way to retrieve the full frequency description in a \textit{ScriptProcessor} or \textit{AudioWorker}. This situation requires the developers to use JavaScript implements of the FFT in order to implement high quality time stretching with Phase Vocoders, instead of relying on native implementations exposed in a JavaScript API like the WAA. This leads to an increased overhead in computational costs because JavaScript is an interpreted language. This overhead can cause sudden audio dropouts when using algorithms like the Phase Vocoder, Spectral Modelling or Percussive-Harmonic Separation \cite{Tachibana:2014:HSS:2719949.2719982} within a \textit{ScriptProcessor}.\footnote{In Google Chrome/Chromium, if you play three or more songs, audio drop-outs occur. In Firefox, these drop-outs happen for six or more songs.} And, in a Phase Vocoder, the bulk of the computational cost is due to the FFT. This absence caused significant discussion within the WAA community.\footnote{https://github.com/WebAudio/web-audio-api/issues/468}
+Currently, the WAA offers two classes to work in frequency domain: (1) \textit{AnalyserNode}, allowing the developer to obtain the magnitude spectra (but no phase spectra) of a time sequence, (2) \textit{PeriodicWave}, an interface to define a periodic waveform for an \textit{OscillatorNode} in order to perform synthesis using a similar method to the one described in \cite{moorer1976the}. Currently, there is no way to retrieve the full frequency description in a \textit{ScriptProcessor} or \textit{AudioWorker}. This situation requires  developers to use JavaScript implements of the FFT in order to implement high quality time stretching with Phase Vocoders, instead of relying on native implementations exposed in a JavaScript API like the WAA. This leads to an increased overhead in computational costs because JavaScript is an interpreted language. This overhead can cause sudden audio dropouts when using algorithms like the Phase Vocoder, Spectral Modelling or Percussive-Harmonic Separation \cite{Tachibana:2014:HSS:2719949.2719982} within a \textit{ScriptProcessor}.\footnote{In Google Chrome/Chromium, if you play three or more songs, audio drop-outs occur. In Firefox, these drop-outs happen for six or more songs.} And, in a Phase Vocoder, the bulk of the computational cost is due to the FFT. This absence caused significant discussion within the WAA community.\footnote{https://github.com/WebAudio/web-audio-api/issues/468}
 
 \section{Conclusions and Future Work}
 
-In this paper, we presented the existing time stretching and pitch shifting implementations using web technologies, as well as two new implementations. Then, we compared the implementations regarding computational costs and the existence of audio artefacts. Additionally, we comment on the current state of the WAA specification regarding frequency operations and how does that affect time stretching and pitch shifting.
+In this paper, we presented the existing time stretching and pitch shifting implementations using web technologies, as well as two new implementations. Then, we compared the implementations regarding computational costs and the existence of audio artefacts. Additionally, we commented on the current state of the WAA specification regarding frequency operations and how that affects time stretching and pitch shifting.
 
-Our next steps regarding OLA-TS.js and PhaseVocoder.js are: to integrate this implementation in creative frameworks and applications like Flocking and EarSketch. Additionally, we plan on integrating a re-sampler in the helper classes in order to provide pitch shifting. For PhaseVocoder.js, we plan to include new audio effects like robotization and whiperization.
+Our next step regarding OLA-TS.js and PhaseVocoder.js will be to integrate the implementations in creative frameworks and applications like Flocking and EarSketch. Additionally, we plan on integrating a re-sampler in the helper classes in order to provide pitch shifting. For PhaseVocoder.js, we plan to include new audio effects like robotization and whiperization.
 
 
 

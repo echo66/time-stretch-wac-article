@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  13 OCT 2015 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  13 OCT 2015 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1021,8 +1021,8 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 
  <./cc.png>]
 ! Undefined control sequence.
-l.294 	\subfloat
-                (a) \includegraphics[width=3.9in]{OLA}
+l.294 	\subfigure
+                 (a) \includegraphics[width=3.9in]{OLA}
 ? 
 <OLA.pdf, id=46, 598.235pt x 290.08376pt>
 File: OLA.pdf Graphic file (type pdf)
@@ -1031,8 +1031,8 @@ Package pdftex.def Info: OLA.pdf used on input line 294.
 (pdftex.def)             Requested size: 281.85255pt x 136.67134pt.
 
 ! Undefined control sequence.
-l.295 	\subfloat
-                (b) \includegraphics[width=2.2in]{WSOLA}
+l.295 	\subfigure
+                 (b) \includegraphics[width=2.2in]{WSOLA}
 ? 
 <WSOLA.pdf, id=47, 260.975pt x 188.705pt>
 File: WSOLA.pdf Graphic file (type pdf)

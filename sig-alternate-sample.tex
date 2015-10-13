@@ -291,8 +291,8 @@ To perform pitch shifting, one can use the same method described for OLA.
 \begin{figure*}
 	\centering
 	%COLOCAR AS IMAGENS: (a) eps/constant-bpm, (b) eps/step-bpm, (c) eps/aprox-bpm, (d) eps/linear-bpm [width=1.4in]
-	\subfloat(a) \includegraphics[width=3.9in]{OLA}
-	\subfloat(b) \includegraphics[width=2.2in]{WSOLA}
+	\subfigure(a) \includegraphics[width=3.9in]{OLA}
+	\subfigure(b) \includegraphics[width=2.2in]{WSOLA}
 	\caption{Illustrations for (a) the basic OLA algorithm, with both analysis and synthesis steps and (b) the WSOLA analysis step. For time compression, we have $H_a < H_s$. For time expansion, $H_a > H_s$. In WSOLA, the main difference is within the ``reading head" position. For each analysis frame \textit{i}, the analysis hop size $H_{a_i}$ is calculated according to the optimal displacement $\delta_i$, obtained through cross-correlation between analysis frame $i$ and $i-1$, for a maximum delay of $\delta_{max}$: $H_{a_i} = i \cdot H_a + \delta_i$} 
 	\label{fig:OlaAndWsola} 
 \end{figure*} 

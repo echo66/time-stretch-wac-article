@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  7 OCT 2015 23:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  13 OCT 2015 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -715,6 +715,91 @@ code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1 (rcs-revision 1.16)
 \arrowsize=\dimen179
 ))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1 (rcs-revision 1.1)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1 (rcs-revision 1.5)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1 (rcs-revision 1.6)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1 (rcs-revision 1.1)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.callouts.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.callouts.code.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box42
+\pgfnodeparttwobox=\box43
+\pgfnodepartthreebox=\box44
+\pgfnodepartfourbox=\box45
+\pgfnodeparttwentybox=\box46
+\pgfnodepartnineteenbox=\box47
+\pgfnodeparteighteenbox=\box48
+\pgfnodepartseventeenbox=\box49
+\pgfnodepartsixteenbox=\box50
+\pgfnodepartfifteenbox=\box51
+\pgfnodepartfourteenbox=\box52
+\pgfnodepartthirteenbox=\box53
+\pgfnodeparttwelvebox=\box54
+\pgfnodepartelevenbox=\box55
+\pgfnodeparttenbox=\box56
+\pgfnodepartninebox=\box57
+\pgfnodeparteightbox=\box58
+\pgfnodepartsevenbox=\box59
+\pgfnodepartsixbox=\box60
+\pgfnodepartfivebox=\box61
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2008/01/13 v3.0.1 (rcs-revision 1.3)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2009/11/15 v3.0.1 (rcs-revision 1.2)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings
+.code.tex
+File: pgflibraryfadings.code.tex 2008/02/07 v3.0.1 (rcs-revision 1.3)
+))) (/usr/local/texlive/2015/texmf-dist/tex/latex/preprint/balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen180
+)
 Document Class 'sig-alternate' <9th June '13>. Modified by G.K.M. Tobin/Gerry M
 urray/Boris Veytsman
 Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
@@ -728,16 +813,16 @@ Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
 \CommentStream=\write4
 
 Excluding comment 'comment') Excluding comment 'CCSXML'
-\footheight=\dimen180
-\@maxsep=\dimen181
-\@dblmaxsep=\dimen182
+\footheight=\dimen181
+\@maxsep=\dimen182
+\@dblmaxsep=\dimen183
 \aucount=\count121
 \originalaucount=\count122
-\auwidth=\dimen183
-\auskip=\dimen184
-\auskipcount=\count123
+\auwidth=\dimen184
 \auskip=\dimen185
-\allauboxes=\dimen186
+\auskipcount=\count123
+\auskip=\dimen186
+\allauboxes=\dimen187
 \addauthors=\toks36
 \addauflag=\count124
 \subtitletext=\toks37
@@ -756,7 +841,7 @@ Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
-\@acmtitlebox=\box42
+\@acmtitlebox=\box62
 \titlenotecount=\count130
 \tntoks=\toks39
 \tntokstwo=\toks40
@@ -774,10 +859,10 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 \c@paragraph=\count136
 
 Using 'Abbrev' bibliography style
-LaTeX Info: Redefining \cite on input line 1313.
-\bibindent=\dimen187
+LaTeX Info: Redefining \cite on input line 1314.
+\bibindent=\dimen188
 \colcntr=\count137
-\saveb@x=\box43
+\saveb@x=\box63
 \copyrtyr=\toks47
 \acmcopyr=\toks48
 \boilerplate=\toks49
@@ -812,7 +897,7 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 ))
-LaTeX Info: Redefining \ttfamily on input line 1608.
+LaTeX Info: Redefining \ttfamily on input line 1609.
 )
 (./sig-alternate-sample.aux)
 \openout1 = `sig-alternate-sample.aux'.
@@ -833,13 +918,13 @@ LaTeX Font Info:    ... okay on input line 52.
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count139
-\scratchdimen=\dimen188
-\scratchbox=\box44
+\scratchdimen=\dimen189
+\scratchbox=\box64
 \nofMPsegments=\count140
 \nofMParguments=\count141
 \everyMPshowfont=\toks53
 \MPscratchCnt=\count142
-\MPscratchDim=\dimen189
+\MPscratchDim=\dimen190
 \MPnumerator=\count143
 \makeMPintoPDFobject=\count144
 \everyMPtoPDFconversion=\toks54
@@ -918,7 +1003,7 @@ LaTeX Font Info:    Try loading font information for T1+ptm on input line 150.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-<cc.png, id=4, 66.2475pt x 23.33719pt>
+<cc.png, id=29, 66.2475pt x 23.33719pt>
 File: cc.png Graphic file (type png)
  <use cc.png>
 Package pdftex.def Info: cc.png used on input line 150.
@@ -935,40 +1020,54 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 
 
  <./cc.png>]
-<OLA.pdf, id=22, 598.235pt x 290.08376pt>
+! Undefined control sequence.
+l.294 	\subfloat
+                (a) \includegraphics[width=3.9in]{OLA}
+? 
+<OLA.pdf, id=46, 598.235pt x 290.08376pt>
 File: OLA.pdf Graphic file (type pdf)
  <use OLA.pdf>
-Package pdftex.def Info: OLA.pdf used on input line 275.
-(pdftex.def)             Requested size: 252.94499pt x 122.6532pt.
+Package pdftex.def Info: OLA.pdf used on input line 294.
+(pdftex.def)             Requested size: 281.85255pt x 136.67134pt.
 
-Overfull \hbox (12.94499pt too wide) in paragraph at lines 275--276
-[][] 
- []
-
-<WSOLA.pdf, id=23, 326.21875pt x 217.81375pt>
+! Undefined control sequence.
+l.295 	\subfloat
+                (b) \includegraphics[width=2.2in]{WSOLA}
+? 
+<WSOLA.pdf, id=47, 260.975pt x 188.705pt>
 File: WSOLA.pdf Graphic file (type pdf)
  <use WSOLA.pdf>
-Package pdftex.def Info: WSOLA.pdf used on input line 286.
-(pdftex.def)             Requested size: 252.94499pt x 168.89696pt.
-
-Overfull \hbox (12.94499pt too wide) in paragraph at lines 286--287
-[][] 
- []
-
-[2 <./OLA.pdf> <./WSOLA.pdf>] [3]
-Underfull \hbox (badness 3240) in paragraph at lines 377--378
+Package pdftex.def Info: WSOLA.pdf used on input line 295.
+(pdftex.def)             Requested size: 158.99377pt x 114.9659pt.
+ [2] [3 <./OLA.pdf> <./WSOLA.pdf>]
+Underfull \hbox (badness 3240) in paragraph at lines 386--387
 []\T1/aer/m/it/9 process(Array in-put-Frame, CBuffer out-put-Frame)\T1/aer/m/n/
 9 :
  []
 
 
-Underfull \hbox (badness 2277) in paragraph at lines 390--391
-[]\T1/aer/m/it/9 istftCallback(Array real, Ar-ray imag, Ar-ray win-
+Underfull \hbox (badness 1308) in paragraph at lines 412--413
+\T1/aer/m/n/9 li-brary, the de-vel-oper can use the fol-low-ing meth-ods:
  []
 
 [4]
-Overfull \hbox (14.81525pt too wide) in paragraph at lines 437--437
-[]\secfnt ISSUES WITH WEB AU-DIO API, RE-GARD-
+Underfull \hbox (badness 2277) in paragraph at lines 415--416
+[]\T1/aer/m/it/9 istftCallback(Array real, Ar-ray imag, Ar-ray win-
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 423--424
+[]\T1/aer/m/n/9 In BufferedTS, we man-age the out-put buffer-ing of
+ []
+
+
+Underfull \hbox (badness 2608) in paragraph at lines 423--424
+\T1/aer/m/n/9 the ``read head" po-si-tion. For this class, we pro-
+ []
+
+
+Overfull \hbox (5.03508pt too wide) in paragraph at lines 461--461
+[]\secfnt TIME STRETCH-ING AND PITCH SHIFT-
  []
 
 (./sig-alternate-sample.bbl [5]
@@ -977,13 +1076,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ) [6]
 (./sig-alternate-sample.aux) ) 
 Here is how much of TeX's memory you used:
- 16779 strings out of 493091
- 327431 string characters out of 6134970
- 370160 words of memory out of 5000000
- 19888 multiletter control sequences out of 15000+600000
- 53531 words of font info for 71 fonts, out of 8000000 for 9000
+ 18740 strings out of 493091
+ 385599 string characters out of 6134970
+ 458904 words of memory out of 5000000
+ 21795 multiletter control sequences out of 15000+600000
+ 55022 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,71p,1497b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,84p,1508b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvi
 ps/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
@@ -1004,10 +1103,10 @@ m10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on sig-alternate-sample.pdf (6 pages, 347406 bytes).
+Output written on sig-alternate-sample.pdf (6 pages, 317896 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 136 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

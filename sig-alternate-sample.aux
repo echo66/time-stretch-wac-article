@@ -22,11 +22,6 @@
 \citation{phavorit}
 \citation{phasevocoder:pitchshift}
 \citation{dafx:2nd}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Illustration of the basic OLA algorithm, showing how to apply both analysis and synthesis hops. For time compression, $H_a < H_s$. For time expansion, $H_a > H_s$.\relax }}{\thepage }}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:ola}{{1}{\thepage }}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Illustration of the WSOLA analysis step. The synthesis step is equal to OLA. For each analysis frame \textit  {i}, the analysis hop $H_{a_i}$ is calculated according to the optimal displacement $\delta _i$, obtained through cross-correlation between analysis frame \textit  {i} and \textit  {i-1}, for a maximum delay of $\delta _{max}$: $H_{a_i} = i \cdot H_a + \delta _i$\relax }}{\thepage }}
-\newlabel{fig:wsola}{{2}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}WSOLA}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Phase Vocoder}{\thepage }}
 \citation{phasevocoder:identityphaselock}
@@ -42,13 +37,23 @@
 \citation{kievII}
 \citation{emscripten}
 \citation{wavesaudio:wac2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Illustrations for (a) the basic OLA algorithm, with both analysis and synthesis steps and (b) the WSOLA analysis step. For time compression, we have $H_a < H_s$. For time expansion, $H_a > H_s$. In WSOLA, the main difference is within the ``reading head" position. For each analysis frame \textit  {i}, the analysis hop size $H_{a_i}$ is calculated according to the optimal displacement $\delta _i$, obtained through cross-correlation between analysis frame $i$ and $i-1$, for a maximum delay of $\delta _{max}$: $H_{a_i} = i \cdot H_a + \delta _i$\relax }}{\thepage }}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:OlaAndWsola}{{1}{\thepage }}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Existing Implementations}{\thepage }}
 \@writefile{toc}{\contentsline {section}{\numberline {4}New Implementations}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}OLA-TS.js}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}PhaseVocoder.js}{\thepage }}
 \citation{moorer1976the}
 \citation{Tachibana:2014:HSS:2719949.2719982}
 \bibstyle{abbrv}
 \bibdata{sigproc}
 \bibcite{kievII}{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Helper Classes}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation and Discussion}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Time stretching and pitch shifting issues with the WAA}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusions and Future Work}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {8}References}{\thepage }}
 \bibcite{flocking:icmc2014}{2}
 \bibcite{phasevocoder:bernardini}{3}
 \bibcite{modulationline:pitchshift}{4}
@@ -56,11 +61,6 @@
 \bibcite{phavorit}{6}
 \bibcite{phasevocoder:latency}{7}
 \bibcite{laroche:phasinessbusiness}{8}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation and Discussion}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Issues with Web Audio API, regarding time stretching and pitch shifting}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusions and Future Work}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Acknowledgments}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {9}References}{\thepage }}
 \bibcite{phasevocoder:identityphaselock}{9}
 \bibcite{phasevocoder:pitchshift}{10}
 \bibcite{earsketch:wac2015}{11}

@@ -66,7 +66,8 @@
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
 \usepackage{tikz}
-\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows,shapes,shadows}
+\usepackage{balance}
 
 \lstdefinelanguage{JavaScript}{
   keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},

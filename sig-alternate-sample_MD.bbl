@@ -1,0 +1,126 @@
+\begin{thebibliography}{10}
+
+\bibitem{kievII}
+{KievII: GUI Javascript library, for web audio applications
+  https://github.com/janesconference/KievII/ (developers)}, 2013.
+
+\bibitem{flocking:icmc2014}
+C.~Clark and A.~Tindale.
+\newblock {Flocking: A Framework for Declarative Music-Making on the Web}.
+\newblock In {\em {Proceedings of the International Computer Music
+  Conference}}, pages 1550--1557, Athens, 2014.
+
+\bibitem{phasevocoder:bernardini}
+A.~de~Gotzen, N.~Bernardini, and D.~Arfib.
+\newblock Traditional implementations of a phase-vocoder: The tricks of the
+  trade.
+\newblock In {\em Proceedings of the COST G-6 Conference on Digital Audio
+  Effects (DAFX-00)}, Verona, Italy, December 2000.
+
+\bibitem{modulationline:pitchshift}
+S.~Disch and U.~Zolzer.
+\newblock {Modulation and Delay Line Based Digital Audio Effects}.
+\newblock In {\em Proceedings of the 2nd COST G-6 Workshop on Digital Audio
+  Effects (DAFx99)}, NTNU, Trondheim, December 1999.
+
+\bibitem{dolsontutorial:phasevocoder}
+M.~Dolson.
+\newblock The phase vocoder: A tutorial.
+\newblock {\em Computer Music Journal}, {10}({4}):{14--27}, {1986}.
+
+\bibitem{phavorit}
+T.~Karrer, E.~Lee, and J.~Borchers.
+\newblock Phavorit: A phase vocoder for real-time interactive time-stretching.
+\newblock In {\em Proceedings of the International Computer Music Conference},
+  pages 708--715, New Orleans, USA, November 2006.
+
+\bibitem{phasevocoder:latency}
+T.~Karrer, E.~Lee, and J.~Borchers.
+\newblock {An Analysis of Startup and Dynamic Latency in Phase Vocoder-Based
+  Time-Stretching Algorithms}.
+\newblock In {\em Proceedings of the International Computer Music Conference},
+  pages 73--80, Copenhagen, Denmark, August 2007.
+
+\bibitem{laroche:phasinessbusiness}
+J.~Laroche and M.~Dolson.
+\newblock Phase-vocoder: about this phasiness business.
+\newblock In {\em IEEE ASSP Workshop on Applications of Signal Processing to
+  Audio and Acoustics}, pages 4--8, 1997.
+
+\bibitem{phasevocoder:identityphaselock}
+J.~Laroche and M.~Dolson.
+\newblock {Improved phase vocoder time-scale modification of audio}.
+\newblock {\em IEEE Transactions on Speech and Audio Processing},
+  7(3):323--332, 1999.
+
+\bibitem{phasevocoder:pitchshift}
+J.~Laroche and M.~Dolson.
+\newblock {New phase-vocoder techniques for pitch-shifting, harmonizing and
+  other exotic effects}.
+\newblock In {\em {Applications of Signal Processing to Audio and Acoustics,
+  1999 IEEE Workshop on}}, pages 91--94, 1999.
+
+\bibitem{earsketch:wac2015}
+A.~Mahadevan, J.~Freeman, and B.~Magerko.
+\newblock {EarSketch: Teaching computational music remixing in an online Web
+  Audio based learning environment}.
+\newblock In {\em {1st Web Audio Conference}}, {Paris}, {2015}.
+
+\bibitem{moorer1976the}
+J.~A. Moorer.
+\newblock {The Synthesis of Complex Audio Spectra by Means of Discrete
+  Summation Formulas}.
+\newblock {\em Journal of Audio Engineering Society}, 24(9):717--727, 1976.
+
+\bibitem{audiotag}
+S.~Pieters, A.~van Kesteren, P.~Jagenstedt, D.~Denicola, I.~Hickson, R.~Berjon,
+  S.~Faulkner, T.~Leithead, E.~D. Navara, E.~O'Connor, T.~Atkins, S.~Pieters,
+  Y.~Weiss, and M.~Marquis.
+\newblock {HTML 5.1, W3C Working Draft (\url{http://www.w3.org/TR/html51/})},
+  2015.
+
+\bibitem{verhelst:wsola93}
+M.~Roelands and W.~Verhelst.
+\newblock {Waveform similarity based overlap-add (WSOLA) for time-scale
+  modification of speech: structures and evaluation.}
+\newblock In {\em EUROSPEECH}, 1993.
+
+\bibitem{wavesaudio:wac2015}
+N.~Schnell, V.~Saiz, K.~Barkati, and S.~Goldszmith.
+\newblock {Of Time Engines and Masters - An API for Scheduling and
+  Synchronizing the Generation and Playback of Event Sequences and Media
+  Streams for the Web Audio API}.
+\newblock In {\em {1st Web Audio Conference}}, {Paris}, {2015}.
+
+\bibitem{dspguide}
+S.~W. Smith.
+\newblock {\em {The Scientist and Engineer's Guide to Digital Signal
+  Processing}}.
+\newblock 2011.
+
+\bibitem{Tachibana:2014:HSS:2719949.2719982}
+H.~Tachibana, N.~Ono, H.~Kameoka, and S.~Sagayama.
+\newblock Harmonic/percussive sound separation based on anisotropic smoothness
+  of spectrograms.
+\newblock {\em IEEE/ACM Transactions on Audio, Speech and Language Processing},
+  22(12):2059--2073, December 2014.
+
+\bibitem{audiotag:playbackRate}
+Teoli and C.~Mills.
+\newblock {Web Audio playbackRate explained
+  (\url{https://developer.mozilla.org/en-US/Apps/Build/Audio_and_video_delivery/WebAudio_playbackRate_explained})},
+  2014.
+
+\bibitem{emscripten}
+A.~Zakai.
+\newblock {Emscripten: an LLVM-to-JavaScript compiler}.
+\newblock In {\em {26th Annual ACM SIGPLAN Conference on Object-Oriented
+  Programming, Systems, Languages, and Applications, OOPSLA}}, Portland, OR,
+  USA, October 2011.
+
+\bibitem{dafx:2nd}
+U.~Zolzer.
+\newblock {\em {DAFX: Digital Audio Effects, second edition}}.
+\newblock Wiley, New Jersey, 2011.
+
+\end{thebibliography}

@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Theoretical Background}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{OLA}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{WSOLA}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Phase Vocoder}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Existing Implementations}{}% 6
+\BOOKMARK [1][-]{section.4}{Proposed Implementations}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{OLA-TS.js}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{PhaseVocoder.js}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Helper Classes}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Analysis and Discussion}{}% 11
+\BOOKMARK [1][-]{section.6}{Time stretching and pitch shifting issues with the WAA}{}% 12
+\BOOKMARK [1][-]{section.7}{Conclusions and Future Work}{}% 13
+\BOOKMARK [1][-]{section.8}{Acknowledgments}{}% 14
+\BOOKMARK [1][-]{section.9}{References}{}% 15

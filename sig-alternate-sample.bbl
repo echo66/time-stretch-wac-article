@@ -2,7 +2,7 @@
 
 \bibitem{kievII}
 {KievII: GUI Javascript library, for web audio applications
-  https://github.com/janesconference/KievII/ (developers)}, 2013.
+  https://github.com/janesconference/KievII/}, 2013.
 
 \bibitem{flocking:icmc2014}
 C.~Clark and A.~Tindale.
@@ -15,31 +15,18 @@ A.~de~Gotzen, N.~Bernardini, and D.~Arfib.
 \newblock Traditional implementations of a phase-vocoder: The tricks of the
   trade.
 \newblock In {\em Proceedings of the COST G-6 Conference on Digital Audio
-  Effects (DAFX-00)}, Verona, Italy, December 2000.
+  Effects (DAFX-00)}, Verona, Italy, 2000.
 
 \bibitem{modulationline:pitchshift}
 S.~Disch and U.~Zolzer.
 \newblock {Modulation and Delay Line Based Digital Audio Effects}.
 \newblock In {\em Proceedings of the 2nd COST G-6 Workshop on Digital Audio
-  Effects (DAFx99)}, NTNU, Trondheim, December 1999.
+  Effects (DAFx99)}, NTNU, Trondheim, 1999.
 
 \bibitem{dolsontutorial:phasevocoder}
 M.~Dolson.
 \newblock The phase vocoder: A tutorial.
 \newblock {\em Computer Music Journal}, {10}({4}):{14--27}, {1986}.
-
-\bibitem{phavorit}
-T.~Karrer, E.~Lee, and J.~Borchers.
-\newblock Phavorit: A phase vocoder for real-time interactive time-stretching.
-\newblock In {\em Proceedings of the International Computer Music Conference},
-  pages 708--715, New Orleans, USA, November 2006.
-
-\bibitem{phasevocoder:latency}
-T.~Karrer, E.~Lee, and J.~Borchers.
-\newblock {An Analysis of Startup and Dynamic Latency in Phase Vocoder-Based
-  Time-Stretching Algorithms}.
-\newblock In {\em Proceedings of the International Computer Music Conference},
-  pages 73--80, Copenhagen, Denmark, August 2007.
 
 \bibitem{laroche:phasinessbusiness}
 J.~Laroche and M.~Dolson.
@@ -73,9 +60,7 @@ J.~A. Moorer.
 \newblock {\em Journal of Audio Engineering Society}, 24(9):717--727, 1976.
 
 \bibitem{audiotag}
-S.~Pieters, A.~van Kesteren, P.~Jagenstedt, D.~Denicola, I.~Hickson, R.~Berjon,
-  S.~Faulkner, T.~Leithead, E.~D. Navara, E.~O'Connor, T.~Atkins, S.~Pieters,
-  Y.~Weiss, and M.~Marquis.
+S.~Pieters, A.~van Kesteren, et~al.
 \newblock {HTML 5.1, W3C Working Draft (\url{http://www.w3.org/TR/html51/})},
   2015.
 
@@ -103,7 +88,7 @@ H.~Tachibana, N.~Ono, H.~Kameoka, and S.~Sagayama.
 \newblock Harmonic/percussive sound separation based on anisotropic smoothness
   of spectrograms.
 \newblock {\em IEEE/ACM Transactions on Audio, Speech and Language Processing},
-  22(12):2059--2073, December 2014.
+  22(12):2059--2073, 2014.
 
 \bibitem{audiotag:playbackRate}
 Teoli and C.~Mills.
@@ -116,7 +101,7 @@ A.~Zakai.
 \newblock {Emscripten: an LLVM-to-JavaScript compiler}.
 \newblock In {\em {26th Annual ACM SIGPLAN Conference on Object-Oriented
   Programming, Systems, Languages, and Applications, OOPSLA}}, Portland, OR,
-  USA, October 2011.
+  USA, 2011.
 
 \bibitem{dafx:2nd}
 U.~Zolzer.

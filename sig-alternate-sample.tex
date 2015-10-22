@@ -107,7 +107,7 @@
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
-%\author{
+\author{
 % You can go ahead and credit any number of authors here,
 % e.g. one 'row of three' or two rows (consisting of one row of three
 % and a second row of one, two or three).
@@ -119,23 +119,23 @@
 % e-mail address with \email.
 %
 % 1st. author
-%\alignauthor Matthew E. P. Davies
-%	\affaddr{Sound and Music Computing Group, INESC TEC, Porto, Portugal}
-%	\email{mdavies@inesctec.pt}
+\alignauthor Bruno Dias\\
+	\affaddr{INESC-ID, IST - Universidade de Lisboa, Portugal}\\
+      	\email{bruno.s.dias@ist.utl.pt}
 % 2nd. author
-%\alignauthor David Martins Matos\\
-%	\affaddr{INESC-ID, IST - Universidade de Lisboa, Portugal}\\
-%       	\email{david.matos@inesc-id.pt }
+\alignauthor Matthew E. P. Davies
+	\affaddr{INESC TEC, Porto, Portugal}
+	\email{mdavies@inesctec.pt}
+\and
 % 3rd. author
-%\alignauthor Helena Sofia Pinto\\
-%	\affaddr{INESC-ID, IST - Universidade de Lisboa, Portugal}\\
-%       	\email{sofia@ontol.inesc-id.pt }
-%\and
+\alignauthor David M. Matos\\
+	\affaddr{INESC-ID, IST - Universidade de Lisboa, Portugal}\\
+       	\email{david.matos@inesc-id.pt }
 % 4th. author
-%\alignauthor Bruno Dias\\
-%	\affaddr{INESC-ID, IST - Universidade de Lisboa, Portugal}\\
-%      	\email{bruno.s.dias@ist.utl.pt}
-%}
+\alignauthor H. Sofia Pinto\\
+	\affaddr{INESC-ID, IST - Universidade de Lisboa, Portugal}\\
+       	\email{sofia@inesc-id.pt }
+}
 
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -149,9 +149,10 @@
 \maketitle
 \begin{abstract}
 \begin{sloppypar}
-Audio time stretching and pitch shifting are operations that all major commercial and/or open source Digital Audio Workstations, DJ Mixing Software and Live Coding Suites offer. These operations allow users to change the duration of audio files while maintaining the pitch and vice-versa. Such operations allow, for example, a DJ to speed up, or slow down, a song that is being mixed into another song, in order to align the tempo, and beats, of both songs. Unfortunately, there are few (and experimental) client-side JavaScript implementations of these two operations.
+Audio time stretching and pitch shifting are operations that all major commercial and/or open source Digital Audio Workstations, DJ Mixing Software and Live Coding Suites offer. These operations allow users to change the duration of audio files while maintaining the pitch and vice-versa. Such operations can allow DJs to speed up or slow down songs in order to mix them togetherby aligning the beats. Unfortunately, there are few (and experimental) client-side JavaScript implementations of these two operations.
+
 \end{sloppypar}
-In this paper, we review the current state of art for client-side implementations of time stretching and pitch shifting, their limitations, and describe two new implementations for two well-known algorithms: (1) Phase Vocoder with Identity Phase Lock and (2) a modified version of Overlap \& Add.
+In this paper, we review the current state of the art for client-side implementations of time stretching and pitch shifting, their limitations, and describe two new implementations for two well-known algorithms: (1) Phase Vocoder with Identity Phase Lock and (2) a modified version of Overlap \& Add.
 
 Additionally, we discuss some issues related to the Web Audio API (WAA) and frequency-based audio processing regarding latency and audio quality in pitch shifting and time stretching towards raising awareness about possible changes in the WAA. %% MD removed extra "time" 
 \end{abstract}
@@ -162,67 +163,62 @@ Additionally, we discuss some issues related to the Web Audio API (WAA) and freq
 % http://dl.acm.org/ccs.cfm
 % Please copy and paste the code instead of the example below. 
 %
-%\begin{CCSXML}
-%<ccs2012>
- %<concept>
-  %<concept_id>10010520.10010553.10010562</concept_id>
-  %<concept_desc>Computer systems organization~Embedded systems</concept_desc>
-  %<concept_significance>500</concept_significance>
- %</concept>
- %<concept>
-  %<concept_id>10010520.10010575.10010755</concept_id>
-  %<concept_desc>Computer systems organization~Redundancy</concept_desc>
-  %<concept_significance>300</concept_significance>
- %</concept>
- %<concept>
-  %<concept_id>10010520.10010553.10010554</concept_id>
-  %<concept_desc>Computer systems organization~Robotics</concept_desc>
-  %<concept_significance>100</concept_significance>
- %</concept>
- %<concept>
-  %<concept_id>10003033.10003083.10003095</concept_id>
-  %<concept_desc>Networks~Network reliability</concept_desc>
-  %<concept_significance>100</concept_significance>
- %</concept>
-%</ccs2012>  
-%\end{CCSXML}
+
+\begin{CCSXML}
+<ccs2012>
+	<concept>
+		<concept_id>10010405.10010469.10010475</concept_id>
+		<concept_desc>Applied computing~Sound and music computing</concept_desc>
+		<concept_significance>500</concept_significance>
+	</concept>
+	<concept>
+		<concept_id>10002951.10003260.10003282</concept_id>
+		<concept_desc>Information systems~Web applications</concept_desc>
+		<concept_significance>300</concept_significance>
+	</concept>
+	<concept>
+		<concept_id>10002951.10003260.10003300.10003302</concept_id>
+		<concept_desc>Information systems~Browsers</concept_desc>
+		<concept_significance>100</concept_significance>
+	</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Applied computing~Sound and music computing}
+\ccsdesc[300]{Information systems~Web applications}
+\ccsdesc[100]{Information systems~Browsers}
+
+
+%	
+% End generated code
 %
-%\ccsdesc[500]{Computer systems organization~Embedded systems}
-%\ccsdesc[300]{Computer systems organization~Redundancy}
-%\ccsdesc{Computer systems organization~Robotics}
-%\ccsdesc[100]{Networks~Network reliability}
+
 %
+%  Use this command to print the description
 %
-%%
-%% End generated code
-%%
-%
-%%
-%%  Use this command to print the description
-%%
-%\printccsdesc
-%
-%% We no longer use \terms command
-%%\terms{Theory}
-%
-%\keywords{ACM proceedings, \LaTeX, text tagging}
+\printccsdesc
+
+% We no longer use \terms command
+%\terms{Theory}
+
+\keywords{Web Audio API, Time Stretching, Pitch Shifting}
 
 \section{Introduction}
 
 \begin{sloppypar}
-Time stretching and pitch shifting are two operations widely available in commercial and open source musical applications like Ableton Live,\footnote{https://www.ableton.com/} Traktor Pro\footnote{http://bit.ly/1izsxHy} and Ardour.\footnote{http://ardour.org/} Currently, creative frameworks implemented in JavaScript and the Web Audio API (WAA) such as Flocking \cite{flocking:icmc2014} can only change the duration of a signal through re-sampling of audio buffers, thus changing both the duration (i.e.: tempo) and pitch at the same time. In digital audio workstations (DAW) like EarSketch \cite{earsketch:wac2015}, time stretching and pitch shifting is performed server-side, with SoX,\footnote{http://sox.sourceforge.net/} making real-time interaction impossible.
+Time stretching and pitch shifting are two operations widely available in commercial and open source musical applications like Ableton Live,\footnote{\url{https://www.ableton.com/}} Traktor Pro\footnote{\url{http://bit.ly/1izsxHy}} and Ardour.\footnote{\url{http://ardour.org/}} Currently, creative frameworks implemented in JavaScript and the Web Audio API (WAA) such as Flocking \cite{flocking:icmc2014} can only change the duration of a signal through re-sampling of audio buffers, thus changing both the duration (i.e.: tempo) and pitch at the same time. In digital audio workstations (DAW) like EarSketch \cite{earsketch:wac2015}, time stretching and pitch shifting are performed server-side, with SoX,\footnote{\url{http://sox.sourceforge.net/}} making real-time interaction impossible.
 %% MD added extra sentence for motivation to bridge to the next section
 Our aim in this work is towards enabling real-time pitch shifting and time-stretching in browsers, which is currently an under-explored aspect of the WAA.  
 \end{sloppypar}
 
 \begin{sloppypar}
-This paper presents an overview of the current implementations for both algorithms using JavaScript in the browser environment and two new implementations. Additionally, we discuss the impact of certain decisions in the WAA design and philosophy regarding the absence of frequency-based operators like the Fast Fourier Transform (FFT), and their impact on performance.
+This paper presents an overview of the current implementations for both algorithms using JavaScript in the browser environment and two new implementations. Additionally, we discuss the impact of certain decisions in the WAA design and philosophy regarding the absence of frequency-based operators like the Fast Fourier Transform (FFT), and the subsequent impact on performance.
 \end{sloppypar}
 
 \begin{sloppypar}
 For both implementations, we had the following non-functional requirements: 
 \begin{itemize}
-	\item \textbf{Constant memory usage}, with fixed size circular arrays, in order to minimize the impact of the garbage collector, by maintaining a constant memory profile.
+	\item \textbf{Constant memory usage}, with fixed size circular arrays, in order to minimize the impact of the garbage collector by maintaining a constant memory profile.
 	\item \textbf{Intuitive API and documentation}, stating the trade-offs between audio quality and performance.
 	\item \textbf{Minimize assumptions} regarding sample rate, number of channels, the type of audio content (percussive or harmonic) being processed, third party software components and execution environments. %% MD added content - type of "audio" could be wrong interpreted as file type.. .wav .flac .mp3. 
 \end{itemize}
@@ -244,29 +240,29 @@ Algorithms in both time and frequency domains, for time stretching and pitch shi
 \begin{equation}
 x_i(n) = x(n + i \cdot H_a), \,\, x_i \in \mathbb{R}^N
 \end{equation}
-	\item Apply a window $w$ to each analysis frame.
+	\item Apply a window $w$ (e.g.: Hamming window) to each analysis frame
 \begin{equation}
 x_{w_i}(n) = w(n) \cdot x_i(n), \,\, w \in \mathbb{R}^N
 \end{equation}
 	\item Add the (synthesis) frame to the output, by overlapping it with $H_s \in \mathbb{N}^+$, the synthesis hop size, samples of the ``tail" of the output signal $y$
 \begin{equation}
 y(n+i \cdot H_s) = \left\{\begin{array}{lll}
-	y_i(n),\,\,\,\,\,\textrm{if}i=0 \\
-	y(n+i \cdot H_s) + \frac{y_i(n)}{w(n)},\,\textrm{if}\,\,\,i>0
+	y_i(n),\,\,\,\,\,\textrm{if}\,\,\,\,i=0 \\
+	y(n+i \cdot H_s) + \frac{w(n) \cdot y_i(n)}{w(n)^2},\,\textrm{if}\,\,\,i>0
 	\end{array}\right.
 \end{equation}
 \end{enumerate}
-with $y_i = x_{w_i}$ for the basic OLA, $n \in \mathbb{I} \, \land 0 \leq n \leq N$ and $i \in \mathbb{N} \, \land \, i \cdot H_a \leq M \, \land \, i \cdot H_s \leq L$. The relation between both overlap/hop sizes and the the stretching factor is defined as:
+with $y_i = x_{w_i}$ for the basic OLA, $n \in \mathbb{N} \, \land 0 \leq n \leq N$ and $i \in \mathbb{N} \, \land \, i \cdot H_a \leq M \, \land \, i \cdot H_s \leq L$. The relation between both overlap/hop sizes and the the stretching factor is defined as:
 
 \begin{equation}
 \alpha = \frac{H_s}{H_a}. %% MD added full stop. 
 \end{equation}
 
 %% MD added part about relevance for real-time processing.. and minor tweaks to text
-Usually, one of the hop sizes is fixed while the other is a function of $\alpha$. We should note that $\alpha$ can change at each new frame, which is particularly relevant in for real-time audio processing. OLA does not preserve phase relations between consecutive frames and, as such, there are noticeable artefacts in the output signal: modulation of harmonic structures (e.g.: human voice) and reverberation. The temporal complexity of OLA is $O(N)$. In figure \ref{fig:OlaAndWsola}(a), we can see what happens to both $H_a$ and $H_s$ when changing $\alpha$.
+Usually, one of the hop sizes is fixed while the other is a function of $\alpha$. We should note that $\alpha$ can change at each new frame, which is particularly relevant for real-time audio processing. OLA does not preserve phase relations between consecutive frames and, as such, there are noticeable artefacts in the output signal: modulation of harmonic structures (e.g.: human voice) and reverberation. The temporal complexity of OLA is $O(N)$. In figure \ref{fig:OlaAndWsola}(a), we can see what happens to both $H_a$ and $H_s$ when changing $\alpha$.
 
 %% MD - don't understand what you mean by "moments" -> change to frames ??
-To perform pitch shifting with OLA, we could couple a re-sampler to the OLA time stretcher. In order to allow simultaneous time stretching and pitch shifting, let $t$ and $t+1$ be the current and next moments, $\beta_{t}$ be the new desired pitch and $R_{b}$ the sampling rate of the input signal. Then, the new stretching factor $\alpha_{t+1}$ and the new sample rate $R_{t+1}$ are defined as 
+To perform pitch shifting with OLA, we could couple a re-sampler to the OLA time stretcher. In order to allow simultaneous time stretching and pitch shifting, let $t$ and $t+1$ be the current and next frames, $\beta_{t}$ be the new desired pitch and $R_{b}$ the sampling rate of the input signal. Then, the new stretching factor $\alpha_{t+1}$ and the new sample rate $R_{t+1}$ are defined as 
 \begin{equation}
 R_{t+1} = R_{b} * \beta_{t+1}
 \end{equation}
@@ -303,7 +299,7 @@ To perform pitch shifting, we can use the same method described for OLA.
 \subsection{Phase Vocoder}
 
 \begin{sloppypar}
-The Phase Vocoder is a well documented \cite{phasevocoder:bernardini, dolsontutorial:phasevocoder, phavorit, phasevocoder:latency, laroche:phasinessbusiness, phasevocoder:pitchshift, dafx:2nd} algorithm used for time stretching \cite{dolsontutorial:phasevocoder,phavorit}, pitch shifting \cite{phasevocoder:pitchshift} and other audio effects like robotization \cite{dafx:2nd}. In general, it has a higher computational cost than time domain methods like WSOLA but offers higher quality audio, without missing transients. Each iteration of the Phase Vocoder has eight steps which occur in-between steps 2 and 3 of OLA:
+The Phase Vocoder is a well documented \cite{phasevocoder:bernardini, dolsontutorial:phasevocoder, laroche:phasinessbusiness, phasevocoder:pitchshift, dafx:2nd} algorithm used for time stretching \cite{dolsontutorial:phasevocoder}, pitch shifting \cite{phasevocoder:pitchshift} and other audio effects like robotization \cite{dafx:2nd}. In general, it has a higher computational cost than time domain methods like WSOLA but offers higher quality audio, without missing transients. Each iteration of the Phase Vocoder has eight steps which occur in-between steps 2 and 3 of OLA:
 \begin{enumerate}
 	\item Calculate the forward Fourier transform of $x_{w_i}$
 \begin{equation}
@@ -313,7 +309,7 @@ where $\Omega_{k} = \frac{2\pi k}{N}$ is the frequency center for frequency bin 
 
 	\item Calculate the magnitude $|X_i|  \in \mathbb{R}^N$ and phase $\angle X_i  \in \mathbb{R}^N$ spectra for $X_i$ by converting $X_i$ to polar coordinates.
 
-	\item Calculate the difference between current and previous phase spectras and, then, the sample-wise difference with the frequency centres $\Omega_{k}$ 
+	\item Calculate the difference between current and previous phase spectra and, then, the sample-wise difference with the frequency centres $\Omega_{k}$ 
 \begin{equation}
 \Delta_{\angle X_i} = \angle X_{i} - \angle X_{i-1} - H_a \cdot \Omega_k
 \end{equation}
@@ -347,7 +343,7 @@ y_{i}(n) = w(n) \cdot \sum_{k=0}^{N} Y_i(n,\Omega_k) \cdot e^{j\Omega_{k}n}
 \end{enumerate}
 \end{sloppypar}
 
-This algorithm ensures \textit{horizontal phase coherence} (i.e.: phase continuity for the same frequency bin, in consecutive frequency frames) is guaranteed. However, \textit{vertical phase coherence} (i.e.: phase relations between different frequency bins, in the same frame) is usually destroyed in the phase correction process. The loss of \textit{vertical phase coherence} results in a distinct artefact: \textit{phasiness} (i.e.: a metallic tunnel sound). The temporal complexity of the Phase Vocoder is $O(N\,log_{2}N)$.
+This algorithm ensures \textit{horizontal phase coherence}, i.e.: phase continuity for the same frequency bin for consecutive frequency frames, is guaranteed. However, \textit{vertical phase coherence}, i.e.: phase relations between different frequency bins, in the same frame, is usually destroyed in the phase correction process. The loss of \textit{vertical phase coherence} results in a distinct artefact: \textit{phasiness} (i.e.: a metallic tunnel sound). The temporal complexity of the Phase Vocoder is $O(N\,log_{2}N)$.
 
 To maintain both vertical and horizontal coherence, we can apply a technique known as \textit{Identity Phase-Locking} \cite{phasevocoder:identityphaselock}. The main idea is that frequency bins that are not spectral peaks contribute to the partials of the nearest spectral peak. A spectral peak is a local maximum in the magnitude spectra. In order to find the spectral peaks, we can use a simple heuristic: if a frequency bin has the maximum magnitude when compared with four neighbour bins,  then it is a spectral peak. After identifying all spectral peaks, we need to infer the ``region of influence" of each peak (i.e.: for a given peak, which are the non-peak bins that contribute to the peak partial) (see section IIIC of \cite{phasevocoder:identityphaselock}). After identifying both the spectral peaks and the ``regions of influence", the usual phase correction method is applied to the peak bins. The phase of a non-peak bin will be equal to the phase of its corresponding peak bin.
 
@@ -359,11 +355,11 @@ To pitch shift with a Phase Vocoder, there are two methods available. The first 
 \begin{sloppypar}
 In this section we give an overview regarding time stretching and pitch shifting implementations with web technologies like JavaScript and the WAA, as well as native web browser implementations, available through the Audio Element \cite{audiotag}, via its \textit{playbackRate} attribute \cite{audiotag:playbackRate}.
 
-For pitch shift only implementations in JavaScript, there is pitchshift.js \cite{kievII} and jungle.js.\footnote{https://github.com/cwilso/Audio-Input-Effects} The first is a port of a C++ implementation\footnote{http://downloads.dspdimension.com/smbPitchShift.cpp} of the Phase Vocoder for pitch shifting \cite{phasevocoder:pitchshift} while the second is an implementation of the algorithm presented in \cite{modulationline:pitchshift}. 
+For pitch shift only implementations in JavaScript, there is pitchshift.js \cite{kievII} and jungle.js.\footnote{\url{https://github.com/cwilso/Audio-Input-Effects}} The first is a port of a C++ implementation\footnote{\url{http://downloads.dspdimension.com/smbPitchShift.cpp}} of the Phase Vocoder for pitch shifting \cite{phasevocoder:pitchshift} while the second is an implementation of the algorithm presented in \cite{modulationline:pitchshift}. 
 
-In Vexwarp,\footnote{http://www.vexflow.com/vexwarp/} time stretching is performed with the basic phase vocoder algorithm \cite{dolsontutorial:phasevocoder,phavorit}. With this application, it is not possible to perform real-time processing of the input signal.
+In Vexwarp,\footnote{\url{http://www.vexflow.com/vexwarp/}} time stretching is performed with the basic phase vocoder algorithm \cite{dolsontutorial:phasevocoder}. With this application, it is not possible to perform real-time processing of the input signal.
 
-Soundtouch.js\footnote{https://github.com/also/soundtouch-js} is a port of the C++ library SoundTouch,\footnote{http://www.surina.net/soundtouch/} a WSOLA implementation. This library performs both time stretching and pitch shifting (through re-sampling) with some additional features: 
+Soundtouch.js\footnote{\url{https://github.com/also/soundtouch-js}} is a port of the C++ library SoundTouch,\footnote{\url{http://www.surina.net/soundtouch/}} a WSOLA implementation. This library performs both time stretching and pitch shifting (through re-sampling) with some additional features: 
 \begin{itemize}
 	\item Cross-correlation is computed with an interleaved array with all audio channels.
 	\item Instead of implementing the ``naive" approach to cross-correlation, the developers used a hierarchical algorithm.
@@ -373,17 +369,17 @@ This port is tightly coupled regarding buffers, buffer management, stretcher, re
 
 There is another WSOLA implementation: tempo.js \cite{kievII}, the result of the compilation of a port of the SoX tempo effect, using Emscripten \cite{emscripten}. Currently, it has no documentation and the only demo available uses deprecated APIs that are no longer available.
 
-In the WAVES project,\footnote{http://wavesjs.github.io/} the Audio library \cite{wavesaudio:wac2015} supports time stretching and pitch shifting through granular synthesis and re-sampling, offering two classes to perform both tasks: GranularEngine and SegmentEngine. The first one causes significant transient smearing. The second class requires the developer to pass a JSON object detailing the segmentation of the input audio buffer.
+In the WAVES project,\footnote{\url{http://wavesjs.github.io/}} the Audio library \cite{wavesaudio:wac2015} supports time stretching and pitch shifting through granular synthesis and re-sampling, offering two classes to perform both tasks: GranularEngine and SegmentEngine. The first one causes significant transient smearing. The second class requires the developer to pass a JSON object detailing the segmentation of the input audio buffer.
 
 Regarding the native implementations in web browsers, all major browsers, like Opera, Safari, Chrome and Firefox, implement time stretching to be used with the Audio tag, controlling the stretching factor with the \textit{playbackRate} attribute of the Audio tag/object. The stretching factor in the current implementations seems to be limited to the range $\alpha \in [0.5:4]$, where 0.5 is the slowest speed and 4 is the fastest one, meaning that web browsers perform an additional step in order to make the provided $\alpha$ comply with equation (4). Currently, we can only detail the implementation of Firefox and Chromium due to the closed-source nature of Opera and Safari. In Firefox, time stretching is performed by the SoundTouch library. Chromium uses a custom WSOLA implementation. For both browsers, when slowing down, there is some stuttering (more noticeable in Firefox). When speeding up, namely for \textit{playbackRate} values greater than 1.2, there are some missing transients for percussive sounds.
 \end{sloppypar}
 
-\section{New Implementations}
+\section{Proposed Implementations}
 
 \begin{sloppypar}
 In this section, we detail our two implementations for time stretching, OLA-TS.js (modified OLA) and PhaseVocoder.js (Phase Vocoder with Identity Phase-Locking), as well as some helper classes we created to ease the integration of the time stretchers. 
 
-Both implementations operate on a single audio channel and can be included in a \textit{ScriptProcessor} or \textit{AudioWorker} for real-time interaction/processing, or they can be used in batch processsing, in a similar way to Vexwarp, in order to integrate in frameworks and applications like Flocking and EarSketch. They do not include pitch shifting capabilities but that be easily changed by coupling a re-sampler to the helper classes. In order to maintain a static memory footprint, we used an existing circular buffer implementation, CBuffer.\footnote{https://github.com/trevnorris/cbuffer} Even though our time stretchers are implementations of (totally) different algorithms, there is a common API to both stretchers:
+Both implementations operate on a single audio channel and can be included in a \textit{ScriptProcessor} or \textit{AudioWorker} for real-time interaction/processing, or they can be used in batch processsing, in a similar way to Vexwarp, in order to integrate in frameworks and applications like Flocking and EarSketch. They do not include pitch shifting capabilities but that can be easily changed by coupling a re-sampler to the helper classes. In order to maintain a static memory footprint, we used an existing circular buffer implementation, CBuffer.\footnote{\url{https://github.com/trevnorris/cbuffer}} Even though our time stretchers are implementations of (totally) different algorithms, there is a common API to both stretchers:
 
 \begin{itemize}
 	\item \textit{process(Array inputFrame, CBuffer outputFrame)}: given a (mono) frame, performs a time stretching iteration and pushes $H_s$ samples in the output CBuffer.
@@ -408,11 +404,11 @@ Both OLA-TS.js and PhaseVocoder.js use the following formulas to define the anal
 	H_s = \alpha * H_a
 \end{equation}
 %
-where $Ovl(\alpha)$ is the function defined in \textit{overlap\_fn}. In order to properly stretch a input signal, the developer should use a predetermined sequence of instructions. To make integration in other applications easier, we implemented helper classes to manage the buffering and the ``read heads" for the input buffers. Both implementations and their helper classes are public and open source, each one with it's own Git repository.\footnote{https://github.com/echo66/OLA-TS.js}\footnote{https://github.com/echo66/PhaseVocoderJS} Additionally, we implemented a small demo page where the user can drag \& drop several songs and play them simultaneously, controlling the volume and the stretching factor.
+where $Ovl(\alpha)$ is the function defined in \textit{overlap\_fn}. In order to properly stretch a input signal, the developer should use a predetermined sequence of instructions. To make integration in other applications easier, we implemented helper classes to manage the buffering and the ``read heads" for the input buffers. 
 
 \subsection{PhaseVocoder.js}
 
-PhaseVocoder.js uses, by default, fourier.js, an FFT library offering methods implemented in both asm.js\footnote{http://asmjs.org} and  ``raw" JavaScript. In order to use a different FFT library, the developer can use the following methods: \textit{set\_stft\_fn(Function stftCallback)}, \textit{set\_istft\_fn(Function istftCallback)} and \textit{init\_fft\_fn(Function initCallback)}:
+PhaseVocoder.js uses, by default, fourier.js, an FFT library offering methods implemented in both asm.js\footnote{\url{http://asmjs.org}} and  ``raw" JavaScript. In order to use a different FFT library, the developer can use the following methods: \textit{set\_stft\_fn(Function stftCallback)}, \textit{set\_istft\_fn(Function istftCallback)} and \textit{init\_fft\_fn(Function initCallback)}:
 \begin{itemize}
 	\item \textit{stftCallback(Array inputFrame, Array windowFrame, Number wantedSize, Object out)}: \textit{inputFrame} is a sequence of samples; \textit{windowFrame} is the discretization of the window function; \textit{wantedSize} is the desired size for the real and imaginary arrays of the output\footnote{\textit{wantedSize} can not be bigger than \textit{windowFrame.length}.}; \textit{out} is a JSON object with four arrays: real, imaginary, magnitude and phase, all of them describing the result of the forward Short Time Fourier Transform (STFT). This function will be invoked for each time frame being processed by PhaseVocoder.js.
 	\item \textit{istftCallback(Array real, Array imag, Array windowFrame, Array timeFrame)}: \textit{real} and \textit{imag} are the real and imaginary arrays describing a frequency frame; \textit{timeFrame} is the result of the inverse STFT. This function will be invoked when synthesizing a frequency frame, after the phase adaptation.
@@ -431,7 +427,7 @@ To ease integration with the WAA, we implemented \textit{WAAPlayer}, which integ
 
 
 
-\section{Evaluation and Discussion}
+\section{Analysis and Discussion}
 
 \begin{table*}
 	\centering
@@ -451,9 +447,9 @@ To ease integration with the WAA, we implemented \textit{WAAPlayer}, which integ
 	\hline\end{tabular}
 \end{table*}
 
-In this section, we compare our implementations with the existing ones, reviewed in Section 3.
+In this section, we analyze our implementations and compare them with the existing ones, reviewed in Section 3.
 \begin{sloppypar}
-Unlike Vexwarp, PhaseVocoder.js allows real-time and block-wise processing of the input signal, with a minimized impact in transient smearing and no metallic sound, due to the inclusion of \textit{vertical phase coherence}. Unfortunately, due to the number of FFTs used (for $\alpha>1$, there are 4 forward and 4 inverse FFTs per output buffer), the computational costs are greater than soundtouch.js. But, in order to avoid missing transients in soundtouch.js, we must decrease the frame size and/or increase the cross-correlation range, which will increase the computational costs of soundtouch.js and, as a consequence, can make PhaseVocoder.js competitive.
+Unlike Vexwarp, PhaseVocoder.js allows real-time and block-wise processing of the input signal, with a minimized impact in transient smearing and no metallic sound, due to the inclusion of \textit{vertical phase coherence}. Unfortunately, due to the number of FFTs used (for $\alpha>1$, there are 4 forward and 4 inverse FFTs per output buffer), the computational costs are greater than soundtouch.js. So, in order to avoid missing transients in soundtouch.js, we must decrease the frame size and/or increase the cross-correlation range, which will increase the computational costs of soundtouch.js and, as a consequence, can make PhaseVocoder.js competitive.
 \end{sloppypar}
 
 OLA-TS.js allows $O(N)$ time stretching, unlike PhaseVocoder.js, $O(N\,log_{2} N)$, and soundtouch.js, $O(N^2)$, but can introduce noticeable modulation in harmonic structures like the voice of a human singer, for frame sizes smaller than 4096 samples, with a sample rate of 44100 Hz. Additionally, it may require some manual experimentation with the overlap and beta parameters to reduce the modulation.\footnote{We have two default functions to adjust both parameters.} Due to the recommended frame size (4096 samples), OLA-TS.js is adequate for applications where there are smooth adjustments in the stretching factor.
@@ -463,21 +459,21 @@ To make it simple for the reader to understand some of the main features and pro
 
 \section{Time stretching and pitch shifting issues with the WAA}
 
-Currently, the WAA offers two classes to work in frequency domain: (1) \textit{AnalyserNode}, allowing the developer to obtain the magnitude spectra (but no phase spectra) of a time sequence, (2) \textit{PeriodicWave}, an interface to define a periodic waveform for an \textit{OscillatorNode} in order to perform synthesis using a similar method to the one described in \cite{moorer1976the}. Currently, there is no way to retrieve the full frequency description in a \textit{ScriptProcessor} or \textit{AudioWorker}. This situation requires  developers to use JavaScript implements of the FFT in order to implement high quality time stretching with Phase Vocoders, instead of relying on native implementations exposed in a JavaScript API like the WAA. This leads to an increased overhead in computational costs because JavaScript is an interpreted language. This overhead can cause sudden audio dropouts when using algorithms like the Phase Vocoder, Spectral Modelling or Percussive-Harmonic Separation \cite{Tachibana:2014:HSS:2719949.2719982} within a \textit{ScriptProcessor}.\footnote{In Google Chrome/Chromium, if you play three or more songs, audio drop-outs occur. In Firefox, these drop-outs happen for six or more songs.} And, in a Phase Vocoder, the bulk of the computational cost is due to the FFT. This absence caused significant discussion within the WAA community.\footnote{https://github.com/WebAudio/web-audio-api/issues/468}
+Currently, the WAA offers two classes to work in frequency domain: (1) \textit{AnalyserNode}, allowing the developer to obtain the magnitude spectra (but no phase spectra) of a time sequence, (2) \textit{PeriodicWave}, an interface to define a periodic waveform for an \textit{OscillatorNode} in order to perform synthesis using a similar method to the one described in \cite{moorer1976the}. Currently, there is no way to retrieve the full frequency description in a \textit{ScriptProcessor} or \textit{AudioWorker}. This situation requires  developers to use JavaScript implements of the FFT in order to implement high quality time stretching with Phase Vocoders, instead of relying on native implementations exposed in a JavaScript API like the WAA. This leads to an increased overhead in computational costs because JavaScript is an interpreted language. This overhead can cause sudden audio dropouts when using algorithms like the Phase Vocoder, Spectral Modelling or Percussive-Harmonic Separation \cite{Tachibana:2014:HSS:2719949.2719982} within a \textit{ScriptProcessor}. And, in a Phase Vocoder, the bulk of the computational cost is due to the FFT. This absence caused significant discussion within the WAA community.\footnote{\url{https://github.com/WebAudio/web-audio-api/issues/468}}
 
 \section{Conclusions and Future Work}
-
+\begin{sloppypar}
 In this paper, we presented the existing time stretching and pitch shifting implementations using web technologies, as well as two new implementations. Then, we compared the implementations regarding computational costs and the existence of audio artefacts. Additionally, we commented on the current state of the WAA specification regarding frequency operations and how that affects time stretching and pitch shifting.
 
 Our next step regarding OLA-TS.js and PhaseVocoder.js will be to integrate the implementations in creative frameworks and applications like Flocking and EarSketch. Additionally, we plan on integrating a re-sampler in the helper classes in order to provide pitch shifting. For PhaseVocoder.js, we plan to include new audio effects like robotization and whiperization.
 
+Both implementations and their helper classes are public and open source, each one with it's own Git repository.\footnote{\url{https://github.com/echo66/OLA-TS.js}}\footnote{\url{https://github.com/echo66/PhaseVocoderJS}} Additionally, we implemented a small demo page where the user can drag \& drop several songs and play them simultaneously, controlling the volume and the stretching factor. Finally, we plan to conduct a more formal evaluation and comparison of time stretching and pitch shifting implementations.
+\end{sloppypar}
 
+\section{Acknowledgments}
 
-%ACKNOWLEDGMENTS are optional
-%\section{Acknowledgments}
-%
-%This work was partly supported by national funds through FCT – Fundação  para a Ciência e Tecnologia, under project EXCL/EEI-ESS/0257/2012.
-%This work was supported by national funds through Fundação para a Ciência e a Tecnologia (FCT) with reference UID/CEC/50021/2013.
+This work was partly supported by national funds through FCT – Fundação  para a Ciência e Tecnologia, under project EXCL/EEI-ESS/0257/2012.
+This work was supported by national funds through Fundação para a Ciência e a Tecnologia (FCT) with reference UID/CEC/50021/2013.
 
 %
 % The following two commands are all you need in the
@@ -492,4 +488,5 @@ Our next step regarding OLA-TS.js and PhaseVocoder.js will be to integrate the i
 %
 % ACM needs 'a single self-contained file'!
 %
+\balance
 \end{document}

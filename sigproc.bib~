@@ -217,7 +217,7 @@
 
 @MISC{kievII,
 	author = {},
-	title = "{KievII: GUI Javascript library, for web audio applications https://github.com/janesconference/KievII/}",
+	title = "{KievII: GUI Javascript library, for web audio applications https://github.com/janesconference/KievII/ (developers)}",
 	year = {2013},
 	url = {https://github.com/janesconference/KievII/},
 	urldata = {2015-10-7}	}

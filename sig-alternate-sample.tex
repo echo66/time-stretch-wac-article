@@ -224,7 +224,7 @@ For both implementations, we had the following non-functional requirements:
 \end{itemize}
 \end{sloppypar}
 
-The outline of the paper is the following. First, we review the basic theory for time domain and frequency domain time stretch and pitch shifting algorithms. Then, we describe the existing Javascript implementations of such algorithms. After that, we present our two new implementations for two well know algorithms: (1) Phase Vocoder with Identity Phase Locking \cite{laroche:phasinessbusiness} and (2) a modified Overlap \& Add (OLA) algorithm. Finally, we discuss the trade-offs between existing implementations and problems with the WAA regarding these two operations.
+The outline of the paper is the following. First, we review the basic theory for time domain and frequency domain time stretching and pitch shifting algorithms. Then, we describe the existing Javascript implementations of such algorithms. After that, we present our two new implementations for two well know algorithms: (1) Phase Vocoder with Identity Phase Locking \cite{laroche:phasinessbusiness} and (2) a modified Overlap \& Add (OLA) algorithm. Finally, we discuss the trade-offs between existing implementations and problems with the WAA regarding these two operations.
 
 \section{Theoretical Background}
 
@@ -259,7 +259,7 @@ with $y_i = x_{w_i}$ for the basic OLA, $n \in \mathbb{N} \, \land 0 \leq n \leq
 \end{equation}
 
 %% MD added part about relevance for real-time processing.. and minor tweaks to text
-Usually, one of the hop sizes is fixed while the other is a function of $\alpha$. We should note that $\alpha$ can change at each new frame, which is particularly relevant for real-time audio processing. OLA does not preserve phase relations between consecutive frames and, as such, there are noticeable artefacts in the output signal: modulation of harmonic structures (e.g.: human voice) and reverberation. The temporal complexity of OLA is $O(N)$. In figure \ref{fig:OlaAndWsola}(a), we can see what happens to both $H_a$ and $H_s$ when changing $\alpha$.
+Usually, one of the hop sizes is fixed while the other is a function of $\alpha$. We should note that $\alpha$ can change at each new frame, which is particularly relevant for real-time audio processing. OLA does not preserve phase relations between consecutive frames and, as such, there are noticeable artifacts in the output signal: modulation of harmonic structures (e.g.: human voice) and reverberation. The temporal complexity of OLA is $O(N)$. In figure \ref{fig:OlaAndWsola}(a), we can see what happens to both $H_a$ and $H_s$ when changing $\alpha$.
 
 %% MD - don't understand what you mean by "moments" -> change to frames ??
 To perform pitch shifting with OLA, we could couple a re-sampler to the OLA time stretcher. In order to allow simultaneous time stretching and pitch shifting, let $t$ and $t+1$ be the current and next frames, $\beta_{t}$ be the new desired pitch and $R_{b}$ the sampling rate of the input signal. Then, the new stretching factor $\alpha_{t+1}$ and the new sample rate $R_{t+1}$ are defined as 
@@ -384,7 +384,7 @@ Both implementations operate on a single audio channel and can be included in a 
 \begin{itemize}
 	\item \textit{process(Array inputFrame, CBuffer outputFrame)}: given a (mono) frame, performs a time stretching iteration and pushes $H_s$ samples in the output CBuffer.
 	\item \textit{get\_ha}: returns the current analysis hop size. This function calculates the increment to the ``read head" of the input signal, when playing an audio file.
-	\item \textit{get\_hs}: returns the current synthesis hop size. This function calculates the increment to the output signal position which an be used to guide the cursor in the UI of an audio player using OLA-TS.js or PhaseVocoder.js as time stretchers.
+	\item \textit{get\_hs}: returns the current synthesis hop size. This function calculates the increment to the output signal position and can be used to guide the cursor in the UI of an audio player using OLA-TS.js or PhaseVocoder.js as time stretchers.
 	\item \textit{clear\_buffers}: clears all internal buffers, like the overlapping buffer. This can be useful for audio players that need to create a noticeable stop in the transition to the next file in a playlist, in order to avoid using the phase of the previous song to adjust the phase of the next song.
 	\item \textit{set\_alpha(Number newAlpha)}: given the new stretching factor, it computes the new values for $H_s$, $H_a$ (both integers) and invokes the function pointed by \textit{overlap\_fn}.
 	\item \textit{get\_alpha}: returns the last specified stretching factor.
@@ -436,11 +436,11 @@ To ease integration with the WAA, we implemented \textit{WAAPlayer}, which integ
 	\textbf{Name}			& \textbf{T. Stretch/P. Shift}	&\textbf{Algorithm}		& \textbf{Audio Artifacts}\\ \hline
 	SoundTouch.js 			& Both 					& WSOLA + Re-Samplig		& Missing Transients \\ \hline
 	WAVES Audio library		& Both					& G. Synthesis + Re-Sampling	& Smeared Transients \\ \hline
-	pitchshift.js				& Pitch Shift				& Phase Vocoder 			& None \\ \hline
+	pitchshift.js				& Pitch Shift				& Phase Vocoder 			& Smeared Transients \\ \hline
 	jungle.js					& Pitch Shift				& Delay-Line Modulation	& Reverberation \\ \hline
 	Vexwarp					& Time Stretch			& Phase Vocoder 			& Metal Tunnel \\ \hline
 	tempo-sox.js				& Time Stretch			& WSOLA					& Unknown \\ \hline
-	PhaseVocoder.JS 			& Time Stretch			& Phase Vocoder 			& None \\ \hline
+	PhaseVocoder.JS 			& Time Stretch			& Phase Vocoder 			& Smeared Transients \\ \hline
 	OLA-TS.JS 				& Time Stretch			& Modified OLA			& Some modulation in harm. structures \\ \hline
 	Firefox Audio		& Time Stretch			& WSOLA 				& Missing Transients \\ \hline
 	Chromium Audio 	& Time Stretch			& WSOLA 				& None \\
@@ -474,6 +474,7 @@ Both implementations and their helper classes are public and open source, each o
 
 This work was partly supported by national funds through FCT – Fundação  para a Ciência e Tecnologia, under project EXCL/EEI-ESS/0257/2012.
 This work was supported by national funds through Fundação para a Ciência e a Tecnologia (FCT) with reference UID/CEC/50021/2013.
+This research is partially financed by National Funds through the FCT – Fundação para a Ciência e a Tecnologia within post-doctoral grant SFRH/BPD/88722/2012.
 
 %
 % The following two commands are all you need in the
